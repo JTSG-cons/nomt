@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="mn" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>NOMT — Таван зориулалт. Нэг босоо хөрөнгө. | JTSG LLC</title>
+<meta name="description" content="NOMT — Улаанбаатарын А зэрэглэлийн талбай дээрх 15 давхар үйлчилгээт орон сууцны цогцолбор. Нэг барилга, харилцан хамааралгүй таван орлогын урсгал." />
+<meta name="theme-color" content="#07150F" />
+<meta property="og:title" content="NOMT — Five functions. One vertical asset." />
+<meta property="og:description" content="A 15-floor serviced-residential complex on an A-grade Ulaanbaatar site." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif:wght@400;500&family=Noto+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT:'#07150F', raise:'#0A1E14', card:'#0E2619' },
+          brass:  { 300:'#EBD18E', 400:'#DCB86C', 500:'#CBA253', 600:'#9E7C34' },
+          mist:   { DEFAULT:'#A6B8AC', dim:'#6E8377' },
+          paper:  { DEFAULT:'#ECEFEA', ink:'#16241B' },
+          stream: { res:'#EBD18E', serv:'#7FB3AC', off:'#8FB0A6', com:'#D6B387', park:'#82978B' },
+          hair:   '#1E3A2B',
+        },
+        fontFamily: {
+          display: ['"Playfair Display"','"Noto Serif"','"Noto Serif SC"','serif'],
+          body:    ['"Noto Sans"','"Noto Sans SC"','sans-serif'],
+          mono:    ['"IBM Plex Mono"','monospace'],
+        },
+        fontSize: {
+          'display-xl': ['clamp(2.6rem,7vw,5.75rem)', { lineHeight:'1.0', letterSpacing:'-0.025em' }],
+          'display-lg': ['clamp(2rem,4.6vw,3.6rem)',  { lineHeight:'1.04', letterSpacing:'-0.02em' }],
+          'display-md': ['clamp(1.5rem,3vw,2.4rem)',  { lineHeight:'1.1', letterSpacing:'-0.015em' }],
+          'spec':       ['clamp(1.6rem,3.4vw,2.6rem)',{ lineHeight:'1', letterSpacing:'-0.01em' }],
+          'micro':      ['11px', { lineHeight:'1.5', letterSpacing:'0.28em' }],
+        },
+        letterSpacing: { tightest:'-0.03em', wide2:'0.22em', widest2:'0.30em' },
+        transitionTimingFunction: { cine:'cubic-bezier(.16,1,.3,1)', spring:'cubic-bezier(.22,1,.36,1)' },
+      }
+    }
+  }
+</script>
+
+<style>
+  :root{ --cine:cubic-bezier(.16,1,.3,1); --spring:cubic-bezier(.22,1,.36,1); }
+  html{ -webkit-text-size-adjust:100%; }
+  body{ text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+  p{ line-height:1.75; }
+  .font-cjk{ line-height:1.9; }
+  .font-cjk .font-display{ font-family:'Noto Serif SC','Noto Serif',serif; letter-spacing:0; }
+  .font-cjk .font-body, .font-cjk body, .font-cjk p{ font-family:'Noto Sans SC','Noto Sans',sans-serif; }
+  .tnum{ font-feature-settings:"tnum" 1; font-variant-numeric:tabular-nums; }
+
+  /* austere luxury: sharp by default, pills only on buttons */
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:rgba(230,201,136,.72); }
+  .rule{ height:1px; background:linear-gradient(90deg, transparent, rgba(203,162,83,.28), transparent); border:0; }
+  .rule-l{ height:1px; background:rgba(30,58,43,.9); border:0; }
+
+  /* film grain — quiet depth */
+  .grain{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:.045; mix-blend-mode:soft-light; }
+
+  *:focus{ outline:none; }
+  *:focus-visible{ outline:1.5px solid #DCB86C; outline-offset:3px; }
+
+  /* scroll progress hairline */
+  #progress{ transform:scaleX(var(--p,0)); transform-origin:0 50%; }
+
+  /* cinematic reveals (transform/opacity only) */
+  @keyframes cineRise{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
+  .js [data-reveal]{ opacity:0; }
+  [data-reveal].is-in{ opacity:1; animation:cineRise .9s var(--cine) both; animation-delay:calc(var(--i,0)*90ms); }
+  .img-cine{ overflow:hidden; }
+  .img-cine img{ transform:scale(1.08); opacity:0; transition:transform 1.3s var(--cine), opacity 1.1s var(--cine); }
+  .img-cine.is-in img{ transform:scale(1); opacity:1; }
+
+  /* stream bands */
+  .band{ position:relative; opacity:.42; transition:opacity .45s var(--cine), box-shadow .45s var(--cine); }
+  .band::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--tint); opacity:.5; transition:opacity .45s var(--cine); }
+  .band:hover{ opacity:.72; }
+  .band[aria-selected="true"]{ opacity:1; box-shadow:inset 0 0 0 1px var(--tint); }
+  .band[aria-selected="true"]::before{ opacity:1; }
+  .stack-anim .band{ animation:cineRise .6s var(--cine) both; animation-delay:calc(var(--i,0)*80ms); }
+
+  /* chips */
+  .chip{ transition:background-color .25s var(--cine), color .25s var(--cine), border-color .25s var(--cine); }
+  .chip[aria-selected="true"]{ background:#CBA253; color:#07150F; border-color:#CBA253; }
+
+  .btn{ transition:transform .25s var(--cine), background-color .25s, border-color .25s, color .25s; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:active{ transform:translateY(0); }
+
+  /* section index rail */
+  .idx-link span{ transition:width .3s var(--cine), background-color .3s, color .3s; }
+  .idx-link[aria-current="true"] .idx-bar{ width:28px; background:#CBA253; }
+  .idx-link[aria-current="true"] .idx-num{ color:#ECEFEA; }
+
+  ::selection{ background:rgba(203,162,83,.30); color:#fff; }
+  *::-webkit-scrollbar{ width:9px; height:9px; }
+  *::-webkit-scrollbar-thumb{ background:#10261A; }
+  *::-webkit-scrollbar-track{ background:#07150F; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .js [data-reveal]{ opacity:1 !important; }
+    .img-cine img{ transform:none !important; opacity:1 !important; }
+    .band{ opacity:1; } .band:not([aria-selected="true"]){ opacity:.6; }
+    #progress{ transform:scaleX(0) !important; }
+  }
+</style>
+</head>
+
+<body class="bg-ink text-paper font-body antialiased">
+<div class="grain fixed inset-0 z-[60] pointer-events-none"></div>
+<div class="fixed top-0 left-0 right-0 h-px z-[55] bg-brass-500/60" id="progress"></div>
+<a href="#building" data-i18n="a11y.skip" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-brass-500 focus:text-ink focus:px-4 focus:py-2">Агуулга руу шилжих</a>
+
+<!-- SECTION INDEX RAIL (desktop) -->
+<nav aria-label="Section index" class="hidden xl:flex flex-col gap-4 fixed right-7 top-1/2 -translate-y-1/2 z-40">
+  <a href="#dev"      data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">01</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+  <a href="#building" data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">02</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+  <a href="#thesis"   data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">03</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+  <a href="#numbers"  data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">04</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+  <a href="#location" data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">05</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+  <a href="#partner"  data-idx class="idx-link group flex items-center gap-3 justify-end" aria-current="false"><span class="idx-num font-mono text-[10px] text-mist-dim">06</span><span class="idx-bar inline-block h-px w-3 bg-mist-dim/50"></span></a>
+</nav>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/55">
+  <div class="absolute bottom-0 inset-x-0 rule-l opacity-60"></div>
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-3 min-w-0">
+      <span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-ink font-display text-sm">N</span>
+      <span class="font-display text-lg tracking-[0.12em]">NOMT</span>
+    </a>
+    <div class="flex items-center gap-3 sm:gap-5 shrink-0">
+      <div role="group" aria-label="Language" class="flex items-center font-mono text-[11px] tracking-[0.12em]">
+        <button type="button" data-lang="mn" class="btn px-2 py-1 text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="true">МН</button>
+        <span class="text-mist-dim/40">/</span>
+        <button type="button" data-lang="zh" class="btn px-2 py-1 text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="false">中文</button>
+        <span class="text-mist-dim/40">/</span>
+        <button type="button" data-lang="en" class="btn px-2 py-1 text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="false">EN</button>
+      </div>
+      <a href="#partner" data-i18n="nav.cta" class="btn hidden md:inline-flex items-center rounded-full border border-brass-500/60 hover:border-brass-300 hover:bg-brass-500/10 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-5 py-2.5">Танилцуулга авах</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="relative min-h-[92vh] flex items-end overflow-hidden">
+  <div class="img-cine is-in absolute inset-0 -z-10">
+    <picture>
+      <source type="image/webp" srcset="assets/hero-1200.webp 1200w, assets/hero-1920.webp 1920w" sizes="100vw" />
+      <img src="assets/hero-1920.jpg" srcset="assets/hero-1200.jpg 1200w, assets/hero-1920.jpg 1920w" sizes="100vw"
+           width="1920" height="1097" loading="eager" fetchpriority="high" decoding="async" data-parallax="0.12"
+           data-i18n-attr="alt" data-i18n="hero.img.alt" alt="NOMT барилгын үдшийн дүрс" class="w-full h-full object-cover scale-110" />
+    </picture>
+  </div>
+  <div class="absolute inset-0 -z-10 pointer-events-none" style="background:linear-gradient(180deg, rgba(7,21,15,.55) 0%, rgba(7,21,15,.15) 32%, rgba(7,21,15,.55) 64%, #07150F 100%);"></div>
+  <div class="absolute inset-0 -z-10 pointer-events-none mix-blend-multiply" style="background:radial-gradient(70% 60% at 80% 10%, rgba(203,162,83,.14), transparent 70%);"></div>
+
+  <div class="relative w-full max-w-7xl mx-auto px-5 sm:px-8 pb-12 md:pb-16 pt-28">
+    <p data-i18n="hero.eyebrow" class="eyebrow mb-6 is-in" data-reveal>А ЗЭРЭГЛЭЛ · УЛААНБААТАР · ТӨВӨӨС 1.5 КМ</p>
+    <h1 data-i18n="hero.headline" data-reveal style="--i:1" class="font-display font-normal text-display-xl text-balance max-w-4xl mb-7">Таван зориулалт. Нэг босоо хөрөнгө.</h1>
+    <div class="flex flex-wrap items-center gap-3 mb-12" data-reveal style="--i:2">
+      <a href="#partner" data-i18n="hero.cta1" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Хөрөнгө оруулагчийн багц авах</a>
+      <a href="#building" data-i18n="hero.cta2" class="btn inline-flex items-center rounded-full border border-brass-500/40 hover:border-brass-300 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Барилгыг харах</a>
+    </div>
+    <div class="rule-l mb-6 max-w-5xl"></div>
+    <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6 max-w-5xl" data-reveal style="--i:3">
+      <div><dt data-i18n="hero.stat1.v" class="tnum font-mono text-spec text-paper">15</dt><dd data-i18n="hero.stat1.l" class="eyebrow mt-2 text-mist-dim">Давхар + B1</dd></div>
+      <div><dt data-i18n="hero.stat2.v" class="tnum font-mono text-spec text-paper">64</dt><dd data-i18n="hero.stat2.l" class="eyebrow mt-2 text-mist-dim">Орон сууц</dd></div>
+      <div><dt data-i18n="hero.stat3.v" class="tnum font-mono text-spec text-brass-300">5</dt><dd data-i18n="hero.stat3.l" class="eyebrow mt-2 text-mist-dim">Зориулалт</dd></div>
+      <div><dt class="tnum font-mono text-spec text-paper">13,207<span class="text-base align-top ml-1">m²</span></dt><dd data-i18n="hero.stat4.l" class="eyebrow mt-2 text-mist-dim">Нийт талбай</dd></div>
+    </dl>
+  </div>
+  <div class="absolute z-20 right-5 bottom-5 flex items-center gap-2">
+    <span class="w-1 h-1 rounded-full bg-brass-300"></span>
+    <span data-i18n="hero.badge" class="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/70">Уран сайхны төсөөлөл</span>
+  </div>
+</section>
+
+<!-- DEVELOPER / CREDIBILITY (moved up) -->
+<section id="dev" class="py-24 md:py-36 scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <figure data-reveal class="img-cine relative ring-1 ring-hair order-last lg:order-first">
+        <div class="absolute inset-0 z-10 pointer-events-none mix-blend-multiply" style="background:linear-gradient(150deg, rgba(203,162,83,.14), rgba(7,21,15,.4));"></div>
+        <picture>
+          <source type="image/webp" srcset="assets/lobby-800.webp 800w, assets/lobby-1280.webp 1280w" sizes="(min-width:1024px) 46vw, 100vw" />
+          <img src="assets/lobby-1280.jpg" srcset="assets/lobby-800.jpg 800w, assets/lobby-1280.jpg 1280w" sizes="(min-width:1024px) 46vw, 100vw"
+               width="1280" height="853" loading="lazy" decoding="async" data-i18n-attr="alt" data-i18n="dev.img.alt" alt="Лоббигийн индикатив дүрс" class="w-full h-full object-cover" />
+        </picture>
+        <figcaption data-i18n="dev.img.cap" class="absolute z-20 left-4 bottom-4 font-mono text-[10px] uppercase tracking-[0.16em] text-paper/80 bg-ink/50 backdrop-blur px-2.5 py-1">Лобби · Индикатив</figcaption>
+      </figure>
+      <div data-reveal style="--i:1">
+        <p data-i18n="sec.dev.eyebrow" class="eyebrow mb-5">01 — ХӨГЖҮҮЛЭГЧ</p>
+        <h2 data-i18n="sec.dev.title" class="font-display font-normal text-display-lg mb-3">Найдвартай хөгжүүлэгч</h2>
+        <p class="font-display text-xl text-brass-300 mb-1">JTSG LLC</p>
+        <p data-i18n="dev.legal" class="font-mono text-[11px] tracking-[0.1em] text-mist-dim mb-6">ЖЭЙ ТИ ЭС Жи ХХК</p>
+        <p data-i18n="dev.body" class="text-mist mb-8 max-w-xl">НОМТ-ыг ЖЭЙ ТИ ЭС Жи ХХК хөгжүүлж байна. 3,175 м² талбай баталгаажсан, барилгын иж бүрэн зураг төсөл бэлэн (2026 оны 2 сар), барилга нь Улаанбаатарын уур амьсгалд тохирсон.</p>
+        <ul class="grid sm:grid-cols-2 gap-px bg-hair/60 ring-1 ring-hair">
+          <li class="bg-ink px-4 py-3.5"><span data-i18n="trust.land" class="block text-paper text-sm">Газар баталгаажсан · 3,175 m²</span></li>
+          <li class="bg-ink px-4 py-3.5"><span data-i18n="trust.set" class="block text-paper text-sm">Зураг төсөл бэлэн · 2026.02</span></li>
+          <li class="bg-ink px-4 py-3.5"><span data-i18n="trust.seismic" class="block text-paper text-sm">Газар хөдлөлт 8 балл · −36 °C</span></li>
+          <li class="bg-ink px-4 py-3.5"><span data-i18n="trust.grade" class="block text-paper text-sm">А зэрэглэлийн байршил</span></li>
+        </ul>
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-mist-dim font-mono text-[11px] tracking-[0.08em]">
+          <li data-i18n="dev.spec.struct">Цутгамал ТӨ хүрээ</li>
+          <li data-i18n="dev.spec.facade">Метал + шил фасад</li>
+          <li data-i18n="dev.spec.fire">Гал/бат бөх II зэрэг</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BUILDING — floor-by-floor signature (income streams + real renders) -->
+<section id="building" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:linear-gradient(180deg,#07150F,#0A1E14 50%,#07150F)">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
+      <p data-i18n="sec.building.eyebrow" class="eyebrow mb-5">02 — БАРИЛГА</p>
+      <h2 data-i18n="sec.building.title" class="font-display font-normal text-display-lg mb-5">Барилгыг давхар давхраар</h2>
+      <p data-i18n="sec.building.intro" class="text-mist">Нэг хөрөнгө, таван өөр зориулалт. Давхар бүрийг сонгож, бодит дүрс ба үзүүлэлтийг үзнэ үү.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[minmax(0,330px)_1fr] gap-6 lg:gap-12">
+      <!-- streams -->
+      <div id="stackTabs" role="tablist" aria-orientation="vertical" aria-label="Income streams" class="flex flex-col gap-1.5 min-h-[440px]">
+        <button role="tab" id="tab-res" data-zone="res" aria-selected="true" aria-controls="bPanel" tabindex="0" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:8;--tint:#EBD18E;--i:4">
+          <span class="min-w-0"><span data-i18n="stream.residences" class="block font-display text-lg leading-tight">Худалдах орон сууц</span><span class="block eyebrow mt-1.5 text-mist-dim">8–15</span></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#EBD18E"></span>
+        </button>
+        <button role="tab" id="tab-serv" data-zone="serv" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#7FB3AC;--i:3">
+          <span class="min-w-0"><span data-i18n="stream.serviced" class="block font-display text-lg leading-tight">Үйлчилгээт орон сууц</span><span class="block eyebrow mt-1.5 text-mist-dim">5–7</span></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#7FB3AC"></span>
+        </button>
+        <button role="tab" id="tab-off" data-zone="off" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#8FB0A6;--i:2">
+          <span class="min-w-0"><span data-i18n="stream.office" class="block font-display text-lg leading-tight">Оффис</span><span class="block eyebrow mt-1.5 text-mist-dim">5–7</span></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#8FB0A6"></span>
+        </button>
+        <button role="tab" id="tab-com" data-zone="com" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:4;--tint:#D6B387;--i:1">
+          <span class="min-w-0"><span data-i18n="stream.commercial" class="block font-display text-lg leading-tight">Худалдаа үйлчилгээ</span><span class="block eyebrow mt-1.5 text-mist-dim">1–4</span></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#D6B387"></span>
+        </button>
+        <button role="tab" id="tab-park" data-zone="park" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:1;--tint:#82978B;--i:0">
+          <span class="min-w-0"><span data-i18n="stream.parking" class="block font-display text-lg leading-tight">Автомат зогсоол</span><span class="block eyebrow mt-1.5 text-mist-dim">B1</span></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#82978B"></span>
+        </button>
+      </div>
+
+      <!-- panel -->
+      <div id="bPanel" role="tabpanel" tabindex="0" aria-labelledby="tab-res" class="min-w-0">
+        <figure class="img-cine is-in relative ring-1 ring-hair bg-paper/[0.02] mb-6">
+          <div id="pFloorTag" class="absolute z-10 top-3 left-3 font-mono text-[10px] uppercase tracking-[0.16em] text-paper/80 bg-ink/55 backdrop-blur px-2.5 py-1">Индикатив</div>
+          <picture>
+            <source id="pSource" type="image/webp" srcset="assets/floor-res-1600.webp" />
+            <img id="pImg" src="assets/floor-res-1600.jpg" width="1600" height="893" loading="lazy" decoding="async" alt="" class="w-full max-h-[460px] object-contain bg-ink p-2 sm:p-4" />
+          </picture>
+        </figure>
+
+        <div class="flex items-start justify-between gap-4 flex-wrap mb-3">
+          <div>
+            <div class="flex items-center gap-3 mb-1"><span id="pDot" class="w-2.5 h-2.5" style="background:#EBD18E"></span><span id="pTag" class="eyebrow text-brass-300">Хөрөнгийн өгөөж</span></div>
+            <h3 id="pName" class="font-display text-display-md">Худалдах орон сууц</h3>
+          </div>
+          <div id="pFloorsBox" class="text-right"><div data-i18n="label.floors" class="eyebrow text-mist-dim mb-1">Давхар</div><div id="pFloors" class="font-mono text-paper tnum">8–15</div></div>
+        </div>
+        <p id="pLogic" class="text-mist max-w-2xl mb-6">64 орон сууцны борлуулалт — хөрөнгийн үндсэн өгөөж; барилга дуусах тусам эрсдэл буурна.</p>
+
+        <!-- floor facts -->
+        <dl id="pFacts" class="grid grid-cols-3 gap-px bg-hair/60 ring-1 ring-hair mb-2">
+          <div class="bg-ink px-4 py-4 min-w-0"><dt id="pF0L" class="eyebrow text-mist-dim mb-2">Давхар</dt><dd id="pF0V" class="font-mono text-paper tnum break-words">8–15</dd></div>
+          <div class="bg-ink px-4 py-4 min-w-0"><dt id="pF1L" class="eyebrow text-mist-dim mb-2">Нэгж</dt><dd id="pF1V" class="font-mono text-paper tnum break-words">64</dd></div>
+          <div class="bg-ink px-4 py-4 min-w-0"><dt id="pF2L" class="eyebrow text-mist-dim mb-2">Талбай</dt><dd id="pF2V" class="font-mono text-paper tnum break-words">564 m²</dd></div>
+        </dl>
+
+        <!-- residences: unit sub-gallery -->
+        <div id="unitWrap" class="mt-8">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <p id="unitTitle" data-i18n="explorer.units.title" class="eyebrow text-mist">Энэ давхрын орон сууцууд</p>
+            <button id="unitReset" type="button" data-i18n="floor.full" class="font-mono text-[11px] tracking-[0.12em] uppercase text-mist-dim hover:text-brass-300 hidden">Бүтэн давхар</button>
+          </div>
+          <div role="tablist" aria-label="Residence types" class="grid grid-cols-4 sm:grid-cols-8 gap-1.5 mb-6">
+            <button role="tab" data-unit="A" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">A</button>
+            <button role="tab" data-unit="B" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">B</button>
+            <button role="tab" data-unit="C" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">C</button>
+            <button role="tab" data-unit="D" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">D</button>
+            <button role="tab" data-unit="E" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">E</button>
+            <button role="tab" data-unit="F" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">F</button>
+            <button role="tab" data-unit="G" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">G</button>
+            <button role="tab" data-unit="H" aria-selected="false" class="chip btn font-mono text-sm border border-brass-500/25 bg-ink-card text-paper py-2.5">H</button>
+          </div>
+          <!-- unit detail (hidden until a unit chosen) -->
+          <div id="unitDetail" class="hidden grid sm:grid-cols-[1fr_1.1fr] gap-6 items-start border-t border-hair pt-6">
+            <div class="flex items-baseline gap-4">
+              <span id="uLetter" class="font-display text-display-md text-brass-300">A</span>
+              <div>
+                <div id="uBed" class="eyebrow text-mist-dim mb-2">2 унтлагын</div>
+                <div class="flex items-baseline gap-1"><span id="uArea" class="font-mono text-spec text-paper tnum">74.32</span><span class="font-mono text-mist text-sm">m²</span></div>
+              </div>
+            </div>
+            <dl id="uRooms" class="text-sm"></dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section id="thesis" class="py-24 md:py-36 scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
+      <p data-i18n="sec.thesis.eyebrow" class="eyebrow mb-5">03 — ТЕЗИС</p>
+      <h2 data-i18n="sec.thesis.title" class="font-display font-normal text-display-lg">Яагаад энэ хөрөнгө, энд, одоо</h2>
+    </div>
+    <div class="border-t border-hair">
+      <article data-reveal class="grid md:grid-cols-[80px_1fr] gap-4 md:gap-10 py-9 border-b border-hair">
+        <div class="font-mono text-brass-400 text-sm">01</div>
+        <div class="max-w-3xl"><h3 data-i18n="thesis.1.title" class="font-display text-display-md mb-3">Байршил</h3><p data-i18n="thesis.1.body" class="text-mist">А зэрэглэл, төвөөс 1.5 км, Улаанбаатарын эрэлт ихтэй бүсэд; газар баталгаажсан, олж авах эрсдэлгүй.</p></div>
+      </article>
+      <article data-reveal style="--i:1" class="grid md:grid-cols-[80px_1fr] gap-4 md:gap-10 py-9 border-b border-hair">
+        <div class="font-mono text-brass-400 text-sm">02</div>
+        <div class="max-w-3xl"><h3 data-i18n="thesis.2.title" class="font-display text-display-md mb-3">Төрөлжилт</h3><p data-i18n="thesis.2.body" class="text-mist">Борлуулалт, шөнийн үйлчилгээний орлого, оффис ба худалдааны түрээс, зогсоол хоорондоо хамааралгүй хөдөлдөг — нэг зах зээлийн эрсдэл зөөлрүүлэгдэнэ.</p></div>
+      </article>
+      <article data-reveal style="--i:2" class="grid md:grid-cols-[80px_1fr] gap-4 md:gap-10 py-9 border-b border-hair">
+        <div class="font-mono text-brass-400 text-sm">03</div>
+        <div class="max-w-3xl"><h3 data-i18n="thesis.3.title" class="font-display text-display-md mb-3">Өөрийгөө санхүүжүүлэх бүтэц</h3><p data-i18n="thesis.3.body" class="text-mist">64 орон сууцны борлуулалт хөрөнгийн өгөөжийг бий болгоно; зочломтгой, худалдаа, зогсоол эхний өдрөөс тогтмол орлого олно.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS / SPECIFICATIONS -->
+<section id="numbers" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:#0A1E14">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
+      <p data-i18n="sec.numbers.eyebrow" class="eyebrow mb-5">04 — ҮЗҮҮЛЭЛТ</p>
+      <h2 data-i18n="sec.numbers.title" class="font-display font-normal text-display-lg mb-5">Үзүүлэлт</h2>
+      <p data-i18n="sec.numbers.intro" class="text-mist">Талбайн үзүүлэлт нийтэд ил. Санхүүгийн загвар — өртөг, орлого, өгөөж — хөрөнгө оруулагчийн багцад.</p>
+    </div>
+    <div class="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16">
+      <div data-reveal>
+        <h3 data-i18n="num.public.title" class="eyebrow text-mist-dim mb-5">Нийтэд ил</h3>
+        <dl class="grid sm:grid-cols-2 gap-px bg-hair/60 ring-1 ring-hair">
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.gfa" class="text-mist text-sm">Нийт талбай</dt><dd class="tnum font-mono text-paper">13,207 m²</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.saleable" class="text-mist text-sm">Ашигтай талбай</dt><dd class="tnum font-mono text-paper">8,885 m²</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.land" class="text-mist text-sm">Газар</dt><dd class="tnum font-mono text-paper">3,175 m²</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.floors" class="text-mist text-sm">Давхар</dt><dd class="tnum font-mono text-paper">15 + B1</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.residences" class="text-mist text-sm">Орон сууц</dt><dd class="tnum font-mono text-paper">64</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.parking" class="text-mist text-sm">Зогсоол</dt><dd class="tnum font-mono text-paper">20</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.keys" class="text-mist text-sm">Үйлчилгээт талбай</dt><dd class="tnum font-mono text-paper">~148 m²</dd></div>
+          <div class="bg-ink flex items-baseline justify-between gap-4 px-5 py-4"><dt data-i18n="num.grade" class="text-mist text-sm">Бүсийн зэрэглэл</dt><dd data-i18n="num.grade.v" class="font-mono text-brass-300">А зэрэглэл</dd></div>
+        </dl>
+      </div>
+      <div data-reveal style="--i:1">
+        <h3 data-i18n="num.gated.title" class="eyebrow text-mist-dim mb-5">Багцад</h3>
+        <ul class="ring-1 ring-brass-500/20">
+          <li class="flex items-center justify-between gap-4 px-5 py-5 border-b border-brass-500/15"><span data-i18n="num.cost" class="text-paper/90 text-sm">Бүтээн байгуулалтын өртөг</span><span class="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.12em] uppercase text-brass-300 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 10V8a6 6 0 1112 0v2" stroke="currentColor" stroke-width="2"/><rect x="4" y="10" width="16" height="10" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="field.onrequest">Хүсэлтээр</span></span></li>
+          <li class="flex items-center justify-between gap-4 px-5 py-5 border-b border-brass-500/15"><span data-i18n="num.revenue" class="text-paper/90 text-sm">Төсөөлсөн орлого ба өгөөж</span><span class="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.12em] uppercase text-brass-300 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 10V8a6 6 0 1112 0v2" stroke="currentColor" stroke-width="2"/><rect x="4" y="10" width="16" height="10" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="field.onrequest">Хүсэлтээр</span></span></li>
+          <li class="flex items-center justify-between gap-4 px-5 py-5"><span data-i18n="num.irr" class="text-paper/90 text-sm">Зорилтот IRR ба хугацаа</span><span class="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.12em] uppercase text-brass-300 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 10V8a6 6 0 1112 0v2" stroke="currentColor" stroke-width="2"/><rect x="4" y="10" width="16" height="10" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="field.onrequest">Хүсэлтээр</span></span></li>
+        </ul>
+        <p data-i18n="num.gated.note" class="text-mist-dim text-xs mt-4">Шалгарсан хөрөнгө оруулагч, түншүүдтэй хуваалцана.</p>
+        <a href="#partner" data-i18n="nav.cta" class="btn inline-flex items-center mt-6 rounded-full border border-brass-500/60 hover:border-brass-300 hover:bg-brass-500/10 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-5 py-2.5">Танилцуулга авах</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="py-24 md:py-36 scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
+      <p data-i18n="sec.location.eyebrow" class="eyebrow mb-5">05 — БАЙРШИЛ</p>
+      <h2 data-i18n="sec.location.title" class="font-display font-normal text-display-lg mb-5">Байршил</h2>
+      <p data-i18n="loc.intro" class="text-mist">Сүхбаатар дүүрэг, 10-р хороо, 7-р хороолол — Их Тойруугийн хойд талд, хотын төвөөс ойролцоогоор 1.5 км зайтай А зэрэглэлийн бүс.</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
+      <div data-reveal class="ring-1 ring-hair p-6 sm:p-10">
+        <svg viewBox="0 0 400 300" class="w-full h-auto" role="img" aria-labelledby="locTitle">
+          <title id="locTitle" data-i18n="loc.map.caption">Загварчилсан байршлын схем</title>
+          <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#CBA253" stop-opacity=".22"/><stop offset="100%" stop-color="#CBA253" stop-opacity="0"/></radialGradient></defs>
+          <circle cx="200" cy="180" r="150" fill="url(#g)"/>
+          <ellipse cx="200" cy="185" rx="135" ry="92" fill="none" stroke="#6E8377" stroke-width="1.2" stroke-dasharray="5 6" opacity=".7"/>
+          <text x="316" y="150" font-family="IBM Plex Mono, monospace" font-size="9" fill="#6E8377" data-i18n="loc.diagram.ring">Их Тойруу</text>
+          <circle cx="200" cy="200" r="4" fill="#A6B8AC"/>
+          <text x="200" y="224" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#A6B8AC" data-i18n="loc.diagram.centre">Хотын төв</text>
+          <line x1="200" y1="200" x2="200" y2="92" stroke="#CBA253" stroke-width="1.2" stroke-dasharray="3 4"/>
+          <text x="210" y="150" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EBD18E" class="tnum" data-i18n="loc.diagram.dist">1.5 км</text>
+          <g transform="translate(200,82)"><rect x="-8" y="-8" width="16" height="16" fill="#07150F" stroke="#CBA253" stroke-width="2"/><rect x="-3" y="-3" width="6" height="6" fill="#EBD18E"/></g>
+          <text x="200" y="56" text-anchor="middle" font-family="Noto Serif, serif" font-size="13" fill="#ECEFEA" data-i18n="loc.diagram.nomt">NOMT</text>
+          <text x="36" y="40" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6E8377">N ↑</text>
+        </svg>
+        <p data-i18n="loc.map.caption" class="text-mist-dim text-xs mt-4 text-center">Загварчилсан байршлын схем — масштаб бус.</p>
+      </div>
+      <dl class="grid sm:grid-cols-2 gap-px bg-hair/60 ring-1 ring-hair content-start">
+        <div data-reveal class="bg-ink px-6 py-7"><dt data-i18n="loc.dist.l" class="eyebrow text-mist-dim mb-3">Хотын төв хүртэл</dt><dd data-i18n="loc.dist.v" class="font-display text-2xl text-paper tnum">1.5 км</dd></div>
+        <div data-reveal style="--i:1" class="bg-ink px-6 py-7"><dt data-i18n="loc.grade.l" class="eyebrow text-mist-dim mb-3">Бүс</dt><dd data-i18n="loc.grade.v" class="font-display text-2xl text-brass-300">А зэрэглэл</dd></div>
+        <div data-reveal style="--i:2" class="bg-ink px-6 py-7"><dt data-i18n="loc.site.l" class="eyebrow text-mist-dim mb-3">Талбайн хэмжээ</dt><dd data-i18n="loc.site.v" class="font-display text-2xl text-paper tnum">3,175 m²</dd></div>
+        <div data-reveal style="--i:3" class="bg-ink px-6 py-7"><dt data-i18n="loc.status.l" class="eyebrow text-mist-dim mb-3">Газрын төлөв</dt><dd data-i18n="loc.status.v" class="font-display text-2xl text-paper">Баталгаажсан</dd></div>
+        <div data-reveal style="--i:4" class="bg-ink sm:col-span-2 px-6 py-7"><dt data-i18n="loc.access.l" class="eyebrow text-mist-dim mb-3">Байршил</dt><dd data-i18n="loc.access.v" class="text-paper">Их Тойруугийн хойд талд · Сүхбаатар дүүрэг, 10-р хороо</dd></div>
+      </dl>
+    </div>
+    <div data-reveal class="mt-10 md:mt-14">
+      <h3 data-i18n="loc.context.title" class="eyebrow text-mist-dim mb-5">Орчмын байршил</h3>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-hair/60 ring-1 ring-hair">
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx1.l" class="text-paper text-sm mb-1.5">Хотын төв · Чингисийн талбай</div><div data-i18n="loc.ctx1.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">~1.5 км</div></li>
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx2.l" class="text-paper text-sm mb-1.5">Монгол Улсын Их Сургууль</div><div data-i18n="loc.ctx2.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">Төв Сүхбаатар дүүрэг</div></li>
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx3.l" class="text-paper text-sm mb-1.5">Бизнес ба элчингийн бүс</div><div data-i18n="loc.ctx3.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">Хотын цөмд</div></li>
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx4.l" class="text-paper text-sm mb-1.5">Их Тойруу</div><div data-i18n="loc.ctx4.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">Шууд орц/гарц</div></li>
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx5.l" class="text-paper text-sm mb-1.5">Сургууль ба эмнэлэг</div><div data-i18n="loc.ctx5.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">Ойролцоо</div></li>
+        <li class="bg-ink px-5 py-5"><div data-i18n="loc.ctx6.l" class="text-paper text-sm mb-1.5">Худалдаа, хоол, цэцэрлэгт хүрээлэн</div><div data-i18n="loc.ctx6.v" class="font-mono text-mist-dim text-xs tracking-[0.08em]">Алхмын зайд</div></li>
+      </ul>
+      <p data-i18n="loc.context.note" class="text-mist-dim text-xs mt-4">Ойролцоох байршил — Google Maps дээр шалгана уу.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner" class="relative py-24 md:py-36 overflow-hidden border-t border-hair scroll-mt-16">
+  <div class="absolute inset-0 -z-10">
+    <picture><source type="image/webp" srcset="assets/suite-1280.webp" /><img src="assets/suite-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-25" /></picture>
+    <div class="absolute inset-0" style="background:linear-gradient(180deg,#07150F 0%,rgba(7,21,15,.86) 45%,#07150F 100%)"></div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div data-reveal>
+        <p data-i18n="sec.partner.eyebrow" class="eyebrow mb-5">06 — ХАМТРАЛ</p>
+        <h2 data-i18n="partner.head" class="font-display font-normal text-display-lg mb-5">Бүрэн танилцуулгыг аваарай.</h2>
+        <p data-i18n="partner.body" class="text-mist mb-7 max-w-md">Төлөвлөлтийн зураг, орлогын загвар, өртөг ба өгөөжийн тооцоо, гэрээний бүтэц, хугацаа — шалгарсан хөрөнгө оруулагч, түншүүдэд хүсэлтээр илгээнэ.</p>
+        <p data-i18n="form.privacy" class="text-mist-dim text-xs max-w-sm">Бид таны мэдээллийг зөвхөн багц илгээх, хариу барихад ашиглана. Гуравдагч этгээдийн хяналт байхгүй.</p>
+      </div>
+
+      <form id="packForm" novalidate data-reveal style="--i:1" class="ring-1 ring-hair bg-ink/70 backdrop-blur p-6 sm:p-8">
+        <div class="flex items-center justify-between mb-6">
+          <span id="stepLabel" data-i18n="form.step.label" class="eyebrow text-mist-dim">Алхам 1 / 2</span>
+          <div class="flex gap-1.5"><span id="dot1" class="w-6 h-0.5 bg-brass-500"></span><span id="dot2" class="w-6 h-0.5 bg-hair"></span></div>
+        </div>
+        <!-- step 1 -->
+        <div id="step1" class="space-y-5">
+          <label class="block"><span data-i18n="form.name" class="block eyebrow text-mist mb-2">Нэр</span><input name="name" type="text" required autocomplete="name" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
+          <label class="block"><span data-i18n="form.email" class="block eyebrow text-mist mb-2">И-мэйл</span><input name="email" type="email" required autocomplete="email" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
+          <button type="button" id="toStep2" data-i18n="form.next" class="btn w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3 mt-1">Үргэлжлүүлэх</button>
+        </div>
+        <!-- step 2 -->
+        <div id="step2" class="space-y-5 hidden">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block"><span data-i18n="form.company" class="block eyebrow text-mist mb-2">Байгууллага</span><input name="company" type="text" autocomplete="organization" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
+            <label class="block"><span data-i18n="form.phone" class="block eyebrow text-mist mb-2">Утас</span><input name="phone" type="tel" autocomplete="tel" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
+          </div>
+          <label class="block"><span data-i18n="form.type" class="block eyebrow text-mist mb-2">Хөрөнгө оруулагчийн төрөл</span>
+            <select name="type" class="w-full bg-ink border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm">
+              <option data-i18n="form.type.opt1" value="Individual">Хувь хүн</option>
+              <option data-i18n="form.type.opt2" value="Institutional">Байгууллага</option>
+              <option data-i18n="form.type.opt3" value="Developer / JV partner">Хөгжүүлэгч / хамтрагч</option>
+              <option data-i18n="form.type.opt4" value="Fund / family office">Сан / гэр бүлийн оффис</option>
+            </select>
+          </label>
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button type="submit" data-i18n="form.submit" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Багц авах</button>
+            <button type="button" id="toStep1" data-i18n="form.back" class="btn inline-flex items-center rounded-full border border-brass-500/40 hover:border-brass-300 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Буцах</button>
+          </div>
+        </div>
+        <p id="formMsg" role="status" aria-live="polite" class="text-sm mt-5 min-h-[1.25rem]"></p>
+        <a id="visitLink" href="mailto:lcdelgets@gmail.com?subject=NOMT%20site%20visit" data-i18n="form.visit" class="inline-block mt-3 font-mono text-[11px] tracking-[0.12em] uppercase text-mist-dim hover:text-brass-300 underline underline-offset-4">Газар дээр нь үзэх</a>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-hair bg-ink">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+    <div class="grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4"><span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-ink font-display text-sm">N</span><span class="font-display text-xl tracking-[0.12em]">NOMT</span></div>
+        <p data-i18n="footer.descriptor" class="text-mist text-sm max-w-xs">ЖЭЙ ТИ ЭС ХХК — Үйлчилгээт орон сууцны цогцолбор</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contact" class="eyebrow text-mist-dim mb-4">Холбоо барих</h3>
+        <ul class="space-y-2 text-sm"><li><a href="mailto:lcdelgets@gmail.com" class="text-paper hover:text-brass-300">lcdelgets@gmail.com</a></li><li data-i18n="footer.location.v" class="text-mist">Улаанбаатар, Монгол</li></ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.lang.l" class="eyebrow text-mist-dim mb-4">Хэл</h3>
+        <div class="flex gap-3 font-mono text-[11px] tracking-[0.12em]">
+          <button type="button" data-lang="mn" class="btn text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="true">МН</button>
+          <button type="button" data-lang="zh" class="btn text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="false">中文</button>
+          <button type="button" data-lang="en" class="btn text-mist hover:text-paper aria-pressed:text-brass-300" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+    <div class="rule-l mt-12 mb-6"></div>
+    <p data-i18n="footer.disclaimer" class="text-mist-dim text-xs leading-relaxed max-w-3xl">Энэ хуудас нь зөвхөн хэлэлцүүлгийн зорилготой жишиг танилцуулга. Энэ нь үнэт цаасны санал, хөрөнгө оруулах урилга, гэрээ биш. Бүх үзүүлэлт жишиг бөгөөд баталгаажуулалт шаардана.</p>
+    <p data-i18n="footer.rights" class="text-mist-dim text-xs mt-3">© 2026 ЖЭЙ ТИ ЭС Жи ХХК. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  const LANGS=['mn','zh','en'], STORE='nomt.lang';
+
+  const I18N={
+    mn:{
+      'a11y.skip':'Агуулга руу шилжих','nav.cta':'Танилцуулга авах',
+      'hero.eyebrow':'А ЗЭРЭГЛЭЛ · УЛААНБААТАР · ТӨВӨӨС 1.5 КМ',
+      'hero.headline':'Таван зориулалт. Нэг босоо хөрөнгө.',
+      'hero.stat1.v':'15','hero.stat1.l':'Давхар + B1','hero.stat2.v':'64','hero.stat2.l':'Орон сууц','hero.stat3.v':'5','hero.stat3.l':'Зориулалт','hero.stat4.l':'Нийт талбай',
+      'hero.cta1':'Хөрөнгө оруулагчийн багц авах','hero.cta2':'Барилгыг харах','hero.badge':'Уран сайхны төсөөлөл','hero.img.alt':'NOMT барилгын үдшийн уран сайхны төсөөлөл',
+      'sec.dev.eyebrow':'01 — ХӨГЖҮҮЛЭГЧ','sec.dev.title':'Найдвартай хөгжүүлэгч','dev.legal':'ЖЭЙ ТИ ЭС Жи ХХК',
+      'dev.body':'НОМТ-ыг ЖЭЙ ТИ ЭС Жи ХХК хөгжүүлж байна. 3,175 м² талбай баталгаажсан, барилгын иж бүрэн зураг төсөл бэлэн (2026 оны 2 сар), барилга нь Улаанбаатарын уур амьсгалд тохирсон.',
+      'trust.land':'Газар баталгаажсан · 3,175 m²','trust.set':'Зураг төсөл бэлэн · 2026.02','trust.seismic':'Газар хөдлөлт 8 балл · −36 °C','trust.grade':'А зэрэглэлийн байршил',
+      'dev.spec.struct':'Цутгамал ТӨ хүрээ','dev.spec.facade':'Метал + шил фасад','dev.spec.fire':'Гал/бат бөх II зэрэг','dev.img.alt':'Лоббигийн индикатив дүрс','dev.img.cap':'Лобби · Индикатив',
+      'sec.building.eyebrow':'02 — БАРИЛГА','sec.building.title':'Барилгыг давхар давхраар','sec.building.intro':'Нэг хөрөнгө, таван өөр зориулалт. Давхар бүрийг сонгож, бодит дүрс ба үзүүлэлтийг үзнэ үү.',
+      'stream.residences':'Худалдах орон сууц','stream.serviced':'Үйлчилгээт орон сууц','stream.office':'Оффис','stream.commercial':'Худалдаа үйлчилгээ','stream.parking':'Автомат зогсоол',
+      'zone.res.tag':'Хөрөнгийн өгөөж','zone.serv.tag':'Тогтмол шөнийн орлого','zone.off.tag':'Түрээсийн орлого','zone.com.tag':'Гол түрээслэгчийн орлого','zone.park.tag':'Нэмэлт орлого',
+      'zone.res.logic':'64 орон сууцны борлуулалт — хөрөнгийн үндсэн өгөөж; барилга дуусах тусам эрсдэл буурна.',
+      'zone.serv.logic':'Аппарт-зочид буудал шөнөөр төлбөртэй — нээлтийн өдрөөс эхлэх зочломтгойн мөнгөн урсгал.',
+      'zone.off.logic':'Гэрээт түрээсийн орлого — бүтцийн тогтвортой дунд хэсэг.',
+      'zone.com.logic':'Банк, хүүхдийн төв, ресторан болон жижиглэн худалдаа; урт хугацааны түрээстэй гол түрээслэгчид суурийг тогтворжуулна.',
+      'zone.park.logic':'Оршин суугчид, зочид, зочдод үйлчилнэ; дээрх давхар бүрийн үнэ цэнийг нэмэгдүүлнэ.',
+      'label.floors':'Давхар','label.units':'Нэгж','label.billing':'Төлбөр','label.income':'Орлого','label.term':'Хугацаа','label.anchors':'Гол түрээслэгч','label.leases':'Түрээс','label.level':'Давхар','label.type':'Төрөл','label.spaces':'Зогсоол','floor.area.l':'Давхрын талбай',
+      'val.nightly':'Шөнөөр','val.lease':'Түрээс','val.longterm':'Урт хугацаат','val.automated':'Автомат','val.anchorlist':'Банк · Ресторан · Тоглоом · Худалдаа',
+      'field.onrequest':'Хүсэлтээр',
+      'explorer.units.title':'Энэ давхрын орон сууцууд','floor.full':'Бүтэн давхар','unit.title':'Орон сууцны хувилбар','unit.bed.1':'1 унтлагын','unit.bed.2':'2 унтлагын',
+      'room.corridor':'Хонгил','room.bath':'Ариун цэврийн өрөө','room.kitchen':'Гал тогоо','room.bedroom':'Унтлагын өрөө','room.living':'Зочны өрөө','room.balcony':'Тагт',
+      'sec.thesis.eyebrow':'03 — ТЕЗИС','sec.thesis.title':'Яагаад энэ хөрөнгө, энд, одоо',
+      'thesis.1.title':'Байршил','thesis.1.body':'А зэрэглэл, төвөөс 1.5 км, Улаанбаатарын эрэлт ихтэй бүсэд; газар баталгаажсан, олж авах эрсдэлгүй.',
+      'thesis.2.title':'Төрөлжилт','thesis.2.body':'Борлуулалт, шөнийн үйлчилгээний орлого, оффис ба худалдааны түрээс, зогсоол хоорондоо хамааралгүй хөдөлдөг — нэг зах зээлийн эрсдэл зөөлрүүлэгдэнэ.',
+      'thesis.3.title':'Өөрийгөө санхүүжүүлэх бүтэц','thesis.3.body':'64 орон сууцны борлуулалт хөрөнгийн өгөөжийг бий болгоно; зочломтгой, худалдаа, зогсоол эхний өдрөөс тогтмол орлого олно.',
+      'sec.numbers.eyebrow':'04 — ҮЗҮҮЛЭЛТ','sec.numbers.title':'Үзүүлэлт','sec.numbers.intro':'Талбайн үзүүлэлт нийтэд ил. Санхүүгийн загвар — өртөг, орлого, өгөөж — хөрөнгө оруулагчийн багцад.',
+      'num.public.title':'Нийтэд ил','num.gated.title':'Багцад','num.gfa':'Нийт талбай','num.saleable':'Ашигтай талбай','num.land':'Газар','num.floors':'Давхар','num.residences':'Орон сууц','num.parking':'Зогсоол','num.keys':'Үйлчилгээт талбай','num.grade':'Бүсийн зэрэглэл','num.grade.v':'А зэрэглэл',
+      'num.cost':'Бүтээн байгуулалтын өртөг','num.revenue':'Төсөөлсөн орлого ба өгөөж','num.irr':'Зорилтот IRR ба хугацаа','num.gated.note':'Шалгарсан хөрөнгө оруулагч, түншүүдтэй хуваалцана.',
+      'sec.location.eyebrow':'05 — БАЙРШИЛ','sec.location.title':'Байршил','loc.intro':'Сүхбаатар дүүрэг, 10-р хороо, 7-р хороолол — Их Тойруугийн хойд талд, хотын төвөөс ойролцоогоор 1.5 км зайтай А зэрэглэлийн бүс.',
+      'loc.dist.l':'Хотын төв хүртэл','loc.dist.v':'1.5 км','loc.grade.l':'Бүс','loc.grade.v':'А зэрэглэл','loc.site.l':'Талбайн хэмжээ','loc.site.v':'3,175 m²','loc.status.l':'Газрын төлөв','loc.status.v':'Баталгаажсан','loc.access.l':'Байршил','loc.access.v':'Их Тойруугийн хойд талд · Сүхбаатар дүүрэг, 10-р хороо',
+      'loc.diagram.ring':'Их Тойруу','loc.diagram.centre':'Хотын төв','loc.diagram.dist':'1.5 км','loc.diagram.nomt':'NOMT','loc.map.caption':'Загварчилсан байршлын схем — масштаб бус.','loc.context.title':'Орчмын байршил','loc.context.note':'Ойролцоох байршил — Google Maps дээр шалгана уу.','loc.ctx1.l':'Хотын төв · Чингисийн талбай','loc.ctx1.v':'~1.5 км','loc.ctx2.l':'Монгол Улсын Их Сургууль','loc.ctx2.v':'Төв Сүхбаатар дүүрэг','loc.ctx3.l':'Бизнес ба элчингийн бүс','loc.ctx3.v':'Хотын цөмд','loc.ctx4.l':'Их Тойруу','loc.ctx4.v':'Шууд орц/гарц','loc.ctx5.l':'Сургууль ба эмнэлэг','loc.ctx5.v':'Ойролцоо','loc.ctx6.l':'Худалдаа, хоол, цэцэрлэгт хүрээлэн','loc.ctx6.v':'Алхмын зайд',
+      'sec.partner.eyebrow':'06 — ХАМТРАЛ','partner.head':'Бүрэн танилцуулгыг аваарай.','partner.body':'Төлөвлөлтийн зураг, орлогын загвар, өртөг ба өгөөжийн тооцоо, гэрээний бүтэц, хугацаа — шалгарсан хөрөнгө оруулагч, түншүүдэд хүсэлтээр илгээнэ.',
+      'form.step.label':'Алхам 1 / 2','form.step.label2':'Алхам 2 / 2','form.name':'Нэр','form.email':'И-мэйл','form.company':'Байгууллага','form.phone':'Утас','form.type':'Хөрөнгө оруулагчийн төрөл',
+      'form.type.opt1':'Хувь хүн','form.type.opt2':'Байгууллага','form.type.opt3':'Хөгжүүлэгч / хамтрагч','form.type.opt4':'Сан / гэр бүлийн оффис',
+      'form.next':'Үргэлжлүүлэх','form.back':'Буцах','form.submit':'Багц авах','form.visit':'Газар дээр нь үзэх',
+      'form.success':'Баярлалаа — таны хүсэлт илгээхэд бэлэн. И-мэйл программ нээгдэнэ; бид биечлэн хариу өгнө.','form.required':'Нэр ба зөв и-мэйл оруулна уу.','form.privacy':'Бид таны мэдээллийг зөвхөн багц илгээх, хариу барихад ашиглана. Гуравдагч этгээдийн хяналт байхгүй.',
+      'footer.descriptor':'ЖЭЙ ТИ ЭС ХХК — Үйлчилгээт орон сууцны цогцолбор','footer.contact':'Холбоо барих','footer.location.v':'Улаанбаатар, Монгол','footer.lang.l':'Хэл',
+      'footer.disclaimer':'Энэ хуудас нь зөвхөн хэлэлцүүлгийн зорилготой жишиг танилцуулга. Энэ нь үнэт цаасны санал, хөрөнгө оруулах урилга, гэрээ биш. Бүх үзүүлэлт жишиг бөгөөд баталгаажуулалт шаардана.',
+      'footer.rights':'© 2026 ЖЭЙ ТИ ЭС Жи ХХК. Бүх эрх хуулиар хамгаалагдсан.'
+    },
+    zh:{
+      'a11y.skip':'跳至内容','nav.cta':'获取资料',
+      'hero.eyebrow':'A级 · 乌兰巴托 · 距市中心1.5公里','hero.headline':'五大功能，一座垂直资产。',
+      'hero.stat1.v':'15','hero.stat1.l':'层 + B1','hero.stat2.v':'64','hero.stat2.l':'套住宅','hero.stat3.v':'5','hero.stat3.l':'功能','hero.stat4.l':'总建筑面积',
+      'hero.cta1':'获取投资资料','hero.cta2':'查看建筑','hero.badge':'艺术效果图','hero.img.alt':'NOMT大厦黄昏艺术效果图',
+      'sec.dev.eyebrow':'01 — 开发商','sec.dev.title':'值得信赖的开发商','dev.legal':'JTSG 有限责任公司',
+      'dev.body':'NOMT由JTSG LLC开发。3,175平方米地块已落实，全套建筑设计已于2026年2月完成，建筑针对乌兰巴托气候设计。',
+      'trust.land':'土地已落实 · 3,175 m²','trust.set':'设计完成 · 2026.02','trust.seismic':'抗震8度 · −36 °C','trust.grade':'A级地段',
+      'dev.spec.struct':'现浇钢混框架','dev.spec.facade':'金属 + 玻璃幕墙','dev.spec.fire':'防火/耐久II级','dev.img.alt':'大堂示意图','dev.img.cap':'大堂 · 示意',
+      'sec.building.eyebrow':'02 — 建筑','sec.building.title':'逐层探索建筑','sec.building.intro':'一座资产，五大不同功能。选择任一楼层，查看真实渲染与指标。',
+      'stream.residences':'待售住宅','stream.serviced':'服务式公寓','stream.office':'办公','stream.commercial':'商业裙楼','stream.parking':'自动停车',
+      'zone.res.tag':'资本回报','zone.serv.tag':'每晚经常性收入','zone.off.tag':'租赁收入','zone.com.tag':'主力租户租金收入','zone.park.tag':'附属收入',
+      'zone.res.logic':'64套住宅的销售去化——主要的资本回收事件；随着工程竣工而逐步降低风险。',
+      'zone.serv.logic':'服务式公寓按夜计费——开业之日起即产生酒店现金流。',
+      'zone.off.logic':'合约租赁收入——结构中稳定的中段。',
+      'zone.com.logic':'银行、儿童乐园、餐厅与零售；长租约的主力租户稳固了底盘。',
+      'zone.park.logic':'服务于住户、宾客与访客；提升其上每一层的价值。',
+      'label.floors':'楼层','label.units':'户数','label.billing':'计费','label.income':'收入','label.term':'期限','label.anchors':'主力租户','label.leases':'租约','label.level':'楼层','label.type':'类型','label.spaces':'车位','floor.area.l':'每层面积',
+      'val.nightly':'按夜','val.lease':'租赁','val.longterm':'长期','val.automated':'自动化','val.anchorlist':'银行 · 餐厅 · 乐园 · 零售',
+      'field.onrequest':'索取提供',
+      'explorer.units.title':'该层住宅户型','floor.full':'整层','unit.title':'住宅户型','unit.bed.1':'1居室','unit.bed.2':'2居室',
+      'room.corridor':'走廊','room.bath':'卫生间','room.kitchen':'厨房','room.bedroom':'卧室','room.living':'客厅','room.balcony':'阳台',
+      'sec.thesis.eyebrow':'03 — 论点','sec.thesis.title':'为何选择此项目',
+      'thesis.1.title':'区位','thesis.1.body':'A级地段，距核心1.5公里，位于乌兰巴托的高需求地带；土地已落实，无收购风险。',
+      'thesis.2.title':'多元化','thesis.2.body':'销售去化、按夜服务式收入、办公与商业租金、停车收入并不同步波动——单一市场的风险敞口得以缓和。',
+      'thesis.3.title':'自我造血的组合','thesis.3.body':'64套住宅的销售带来资本回报；酒店、商业与停车从第一天起即产生经常性收入。',
+      'sec.numbers.eyebrow':'04 — 指标','sec.numbers.title':'指标','sec.numbers.intro':'面积指标为公开信息。财务模型——成本、收入、收益率——载于投资资料包中。',
+      'num.public.title':'公开信息','num.gated.title':'资料包内','num.gfa':'总建筑面积','num.saleable':'可用面积','num.land':'土地','num.floors':'楼层','num.residences':'住宅','num.parking':'车位','num.keys':'服务式面积','num.grade':'地段等级','num.grade.v':'A级',
+      'num.cost':'开发成本','num.revenue':'预计收入与收益率','num.irr':'目标IRR与时间表','num.gated.note':'向合格投资者与合作伙伴提供。',
+      'sec.location.eyebrow':'05 — 区位','sec.location.title':'区位','loc.intro':'苏赫巴托尔区，第10小区，第七微区——大环路以北，距市中心约1.5公里的A级地带。',
+      'loc.dist.l':'距市中心','loc.dist.v':'1.5公里','loc.grade.l':'地段','loc.grade.v':'A级','loc.site.l':'用地面积','loc.site.v':'3,175 m²','loc.status.l':'用地状态','loc.status.v':'已落实','loc.access.l':'位置','loc.access.v':'大环路以北 · 苏赫巴托尔区第10小区',
+      'loc.diagram.ring':'大环路','loc.diagram.centre':'市中心','loc.diagram.dist':'1.5公里','loc.diagram.nomt':'NOMT','loc.map.caption':'示意区位图——非按比例。','loc.context.title':'周边配套','loc.context.note':'周边位置——请在谷歌地图上核实。','loc.ctx1.l':'市中心 · 成吉思广场','loc.ctx1.v':'~1.5公里','loc.ctx2.l':'蒙古国立大学','loc.ctx2.v':'苏赫巴托尔区中心','loc.ctx3.l':'商务与使馆区','loc.ctx3.v':'城市核心','loc.ctx4.l':'大环路','loc.ctx4.v':'便捷出入','loc.ctx5.l':'学校与医院','loc.ctx5.v':'邻近','loc.ctx6.l':'购物、餐饮与公园','loc.ctx6.v':'步行可达',
+      'sec.partner.eyebrow':'06 — 合作','partner.head':'获取完整投资资料包。','partner.body':'平面图、收益模型、成本与回报预测、交易结构与时间表——应合格投资者与合作伙伴的请求发送。',
+      'form.step.label':'步骤 1 / 2','form.step.label2':'步骤 2 / 2','form.name':'姓名','form.email':'电子邮箱','form.company':'公司','form.phone':'电话','form.type':'投资者类型',
+      'form.type.opt1':'个人','form.type.opt2':'机构','form.type.opt3':'开发商 / 合资伙伴','form.type.opt4':'基金 / 家族办公室',
+      'form.next':'继续','form.back':'返回','form.submit':'获取资料','form.visit':'安排实地考察',
+      'form.success':'谢谢——您的请求已准备发送。邮件应用将打开；我们将亲自跟进。','form.required':'请填写姓名与有效邮箱。','form.privacy':'我们仅使用您的信息发送资料并跟进。无第三方追踪。',
+      'footer.descriptor':'JTS有限公司——服务式住宅综合体','footer.contact':'联系','footer.location.v':'蒙古，乌兰巴托','footer.lang.l':'语言',
+      'footer.disclaimer':'本页面仅为供讨论的示意性介绍，并非证券要约、投资邀请或合同。所有指标均为示意性，须经确认。',
+      'footer.rights':'© 2026 JTSG LLC. 保留所有权利。'
+    },
+    en:{
+      'a11y.skip':'Skip to content','nav.cta':'Request the pack',
+      'hero.eyebrow':'A-GRADE · ULAANBAATAR · 1.5 KM FROM CENTRE','hero.headline':'Five functions. One vertical asset.',
+      'hero.stat1.v':'15','hero.stat1.l':'Floors + B1','hero.stat2.v':'64','hero.stat2.l':'Residences','hero.stat3.v':'5','hero.stat3.l':'Functions','hero.stat4.l':'Total GFA',
+      'hero.cta1':'Request the investor pack','hero.cta2':'See the building','hero.badge':"Artist's impression",'hero.img.alt':"Artist's impression of the NOMT building at twilight",
+      'sec.dev.eyebrow':'01 — DEVELOPER','sec.dev.title':'A developer you can trust','dev.legal':'JTSG LLC',
+      'dev.body':'NOMT is developed by JTSG LLC. The 3,175 m² site is secured, the full architectural set is complete (February 2026), and the building is engineered for the UB climate.',
+      'trust.land':'Land secured · 3,175 m²','trust.set':'Architectural set complete · 2026.02','trust.seismic':'Seismic grade 8 · −36 °C','trust.grade':'A-grade location',
+      'dev.spec.struct':'Cast RC frame','dev.spec.facade':'Metal + glass facade','dev.spec.fire':'Fire/durability grade II','dev.img.alt':'Indicative impression of the lobby','dev.img.cap':'Lobby · Indicative',
+      'sec.building.eyebrow':'02 — THE BUILDING','sec.building.title':'The building, floor by floor','sec.building.intro':'One asset, five distinct functions. Select a floor to see its real render and figures.',
+      'stream.residences':'For-sale residences','stream.serviced':'Serviced apartments','stream.office':'Office','stream.commercial':'Commercial podium','stream.parking':'Automated parking',
+      'zone.res.tag':'Capital return','zone.serv.tag':'Recurring nightly revenue','zone.off.tag':'Lease income','zone.com.tag':'Anchor lease income','zone.park.tag':'Ancillary revenue',
+      'zone.res.logic':'Sell-through of 64 homes — the primary capital event; de-risks as construction completes.',
+      'zone.serv.logic':'Aparthotel billed nightly — hospitality cash flow from opening day.',
+      'zone.off.logic':'Contracted lease income — the steady middle of the stack.',
+      'zone.com.logic':'Bank, play centre, restaurant and retail; anchor tenants on long leases stabilise the base.',
+      'zone.park.logic':'Serves residents, guests and visitors; lifts the value of every floor above.',
+      'label.floors':'Floors','label.units':'Units','label.billing':'Billing','label.income':'Income','label.term':'Term','label.anchors':'Anchors','label.leases':'Leases','label.level':'Level','label.type':'Type','label.spaces':'Parking','floor.area.l':'Floor area',
+      'val.nightly':'Nightly','val.lease':'Lease','val.longterm':'Long-term','val.automated':'Automated','val.anchorlist':'Bank · Restaurant · Play · Retail',
+      'field.onrequest':'On request',
+      'explorer.units.title':'Homes on this floor','floor.full':'Full floor','unit.title':'Residence type','unit.bed.1':'1-bedroom','unit.bed.2':'2-bedroom',
+      'room.corridor':'Corridor','room.bath':'Bathroom','room.kitchen':'Kitchen','room.bedroom':'Bedroom','room.living':'Living','room.balcony':'Balcony',
+      'sec.thesis.eyebrow':'03 — THESIS','sec.thesis.title':'Why this asset, here, now',
+      'thesis.1.title':'Location','thesis.1.body':"A-grade, 1.5 km from the core, inside UB's high-demand belt; land secured, no acquisition risk.",
+      'thesis.2.title':'Diversification','thesis.2.body':"Sell-through, nightly serviced revenue, office and commercial leases, and parking don't move together — single-market exposure softened.",
+      'thesis.3.title':'Self-funding mix','thesis.3.body':'The 64 home sales drive capital return; hospitality, commercial and parking generate recurring income from day one.',
+      'sec.numbers.eyebrow':'04 — SPECIFICATIONS','sec.numbers.title':'Specifications','sec.numbers.intro':'Area figures are public. The financial model — cost, revenue and yield — is in the investor pack.',
+      'num.public.title':'Public','num.gated.title':'In the pack','num.gfa':'Total GFA','num.saleable':'Saleable area','num.land':'Land','num.floors':'Floors','num.residences':'Residences','num.parking':'Parking spaces','num.keys':'Serviced area','num.grade':'District grade','num.grade.v':'A-grade',
+      'num.cost':'Development cost','num.revenue':'Projected revenue & yield','num.irr':'Target IRR & timeline','num.gated.note':'Shared with qualified investors and partners.',
+      'sec.location.eyebrow':'05 — LOCATION','sec.location.title':'Location','loc.intro':'Sükhbaatar district, Khoroo 10, 7th micro-district — north of the Big Ring Road, an A-grade belt about 1.5 km from the city centre.',
+      'loc.dist.l':'To city centre','loc.dist.v':'1.5 km','loc.grade.l':'District','loc.grade.v':'A-grade','loc.site.l':'Site area','loc.site.v':'3,175 m²','loc.status.l':'Site status','loc.status.v':'Secured','loc.access.l':'Position','loc.access.v':'North of the Big Ring Road · Sükhbaatar district, Khoroo 10',
+      'loc.diagram.ring':'Big Ring Road','loc.diagram.centre':'City centre','loc.diagram.dist':'1.5 km','loc.diagram.nomt':'NOMT','loc.map.caption':'Stylised location diagram — not to scale.','loc.context.title':'Around the site','loc.context.note':'Indicative surroundings — verify on Google Maps.','loc.ctx1.l':'City centre · Chinggis Square','loc.ctx1.v':'~1.5 km','loc.ctx2.l':'National University of Mongolia','loc.ctx2.v':'Central Sükhbaatar','loc.ctx3.l':'Business & embassy quarter','loc.ctx3.v':'Within the core','loc.ctx4.l':'Big Ring Road','loc.ctx4.v':'Direct access','loc.ctx5.l':'Schools & hospitals','loc.ctx5.v':'Nearby','loc.ctx6.l':'Retail, dining & parks','loc.ctx6.v':'Walkable',
+      'sec.partner.eyebrow':'06 — PARTNER','partner.head':'Get the full investor pack.','partner.body':'Floor plans, the income model, cost and return projections, deal structure and timeline — sent to qualified investors and partners on request.',
+      'form.step.label':'Step 1 / 2','form.step.label2':'Step 2 / 2','form.name':'Name','form.email':'Email','form.company':'Company','form.phone':'Phone','form.type':'Investor type',
+      'form.type.opt1':'Individual','form.type.opt2':'Institutional','form.type.opt3':'Developer / JV partner','form.type.opt4':'Fund / family office',
+      'form.next':'Continue','form.back':'Back','form.submit':'Get the pack','form.visit':'Arrange a site visit',
+      'form.success':"Thank you — your request is ready to send. Your email app will open; we'll follow up personally.",'form.required':'Please enter a name and valid email.','form.privacy':'We use your details only to send the pack and follow up. No third-party tracking.',
+      'footer.descriptor':'JTS LLC — Serviced Residential Complex','footer.contact':'Contact','footer.location.v':'Ulaanbaatar, Mongolia','footer.lang.l':'Language',
+      'footer.disclaimer':'This page is an indicative teaser for discussion only. It is not an offer of securities, an invitation to invest, or a contract. All figures are indicative and subject to confirmation.',
+      'footer.rights':'© 2026 JTSG LLC. All rights reserved.'
+    }
+  };
+
+  const ZONES=[
+    {key:'res',floors:'8–15',color:'#EBD18E',img:'assets/floor-res',ar:'893',nameKey:'stream.residences',tagKey:'zone.res.tag',logicKey:'zone.res.logic',units:true,
+      facts:[{l:'label.floors',t:'8–15'},{l:'label.units',t:'64'},{l:'floor.area.l',t:'564 m²'}]},
+    {key:'serv',floors:'5–7',color:'#7FB3AC',img:'assets/floor-serv',ar:'1340',nameKey:'stream.serviced',tagKey:'zone.serv.tag',logicKey:'zone.serv.logic',
+      facts:[{l:'label.floors',t:'5–7'},{l:'floor.area.l',t:'~148 m²'},{l:'label.billing',v:'val.nightly'}]},
+    {key:'off',floors:'5–7',color:'#8FB0A6',img:'assets/floor-off',ar:'893',nameKey:'stream.office',tagKey:'zone.off.tag',logicKey:'zone.off.logic',
+      facts:[{l:'label.floors',t:'5–7'},{l:'label.income',v:'val.lease'},{l:'label.term',v:'field.onrequest'}]},
+    {key:'com',floors:'1–4',color:'#D6B387',img:'assets/floor-com',ar:'900',nameKey:'stream.commercial',tagKey:'zone.com.tag',logicKey:'zone.com.logic',
+      facts:[{l:'label.floors',t:'1–4'},{l:'label.anchors',v:'val.anchorlist'},{l:'label.leases',v:'val.longterm'}]},
+    {key:'park',floors:'B1',color:'#82978B',img:'assets/floor-park',ar:'900',nameKey:'stream.parking',tagKey:'zone.park.tag',logicKey:'zone.park.logic',
+      facts:[{l:'label.level',t:'B1'},{l:'label.spaces',t:'20'},{l:'label.type',v:'val.automated'}]}
+  ];
+  const UNITS={
+    A:{m2:'74.32',bed:2,rooms:[['room.corridor','9.74'],['room.bath','5.15'],['room.kitchen','6.11'],['room.bedroom','12.72'],['room.living','19.52'],['room.bedroom','15.98'],['room.bath','3.68'],['room.balcony','1.42']]},
+    B:{m2:'59.54',bed:1,rooms:[['room.corridor','4.43'],['room.bath','4.62'],['room.kitchen','7.84'],['room.living','27.35'],['room.bedroom','13.89'],['room.balcony','1.42']]},
+    C:{m2:'79.29',bed:2,rooms:[['room.corridor','9.48'],['room.bath','4.62'],['room.kitchen','7.84'],['room.bedroom','11.70'],['room.living','24.74'],['room.bedroom','15.63'],['room.bath','3.85'],['room.balcony','1.44']]},
+    D:{m2:'68.71',bed:1,rooms:[['room.corridor','4.40'],['room.bath','4.62'],['room.kitchen','10.03'],['room.living','35.03'],['room.bedroom','13.19'],['room.balcony','1.44']]},
+    E:{m2:'74.55',bed:2,rooms:[['room.corridor','9.74'],['room.bath','5.15'],['room.kitchen','6.11'],['room.bedroom','12.72'],['room.living','19.52'],['room.bedroom','15.98'],['room.bath','3.92'],['room.balcony','1.42']]},
+    F:{m2:'60.10',bed:1,rooms:[['room.corridor','4.39'],['room.bath','4.62'],['room.kitchen','7.97'],['room.living','27.81'],['room.bedroom','13.89'],['room.balcony','1.42']]},
+    G:{m2:'79.29',bed:2,rooms:[['room.corridor','9.48'],['room.bath','4.62'],['room.kitchen','7.84'],['room.bedroom','11.70'],['room.living','24.74'],['room.bedroom','15.63'],['room.bath','3.85'],['room.balcony','1.44']]},
+    H:{m2:'68.70',bed:1,rooms:[['room.corridor','4.33'],['room.bath','4.62'],['room.kitchen','10.03'],['room.living','35.09'],['room.bedroom','13.19'],['room.balcony','1.44']]}
+  };
+
+  let lang='mn', zone='res', unit=null;
+  const t=k=>(I18N[lang]&&I18N[lang][k]!=null)?I18N[lang][k]:(I18N.mn[k]!=null?I18N.mn[k]:k);
+  const $=id=>document.getElementById(id);
+
+  function applyLang(l){
+    if(LANGS.indexOf(l)===-1) l='mn';
+    lang=l;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n'), v=t(k), a=el.getAttribute('data-i18n-attr');
+      if(a) el.setAttribute(a,v); else el.textContent=v;
+    });
+    document.documentElement.lang=l;
+    document.documentElement.classList.toggle('font-cjk', l==='zh');
+    document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===l)));
+    try{ localStorage.setItem(STORE,l); }catch(e){}
+    try{ history.replaceState(null,'','/'+l); }catch(e){}
+    renderPanel();
+    setStepLabel();
+  }
+
+  // ---- building panel ----
+  const tabs=[].slice.call(document.querySelectorAll('#stackTabs [role="tab"]'));
+  function renderPanel(){
+    const z=ZONES.filter(x=>x.key===zone)[0]; if(!z) return;
+    $('pDot').style.background=z.color; $('pTag').style.color=z.color;
+    $('pTag').textContent=t(z.tagKey); $('pName').textContent=t(z.nameKey);
+    $('pFloors').textContent=z.floors; $('pLogic').textContent=t(z.logicKey);
+    z.facts.forEach((m,i)=>{ $('pF'+i+'L').textContent=t(m.l); $('pF'+i+'V').textContent=(m.t!=null)?m.t:t(m.v); });
+    $('bPanel').setAttribute('aria-labelledby','tab-'+zone);
+    $('unitWrap').style.display = z.units ? '' : 'none';
+    if(z.units && unit){
+      const u=UNITS[unit];
+      $('pSource').setAttribute('srcset','assets/'+unit+'-1600.webp');
+      $('pImg').setAttribute('src','assets/'+unit+'-1600.jpg');
+      $('pImg').setAttribute('alt', t('unit.title')+' '+unit);
+      $('pFloorTag').textContent=t('floor.full')==='Full floor'?'Indicative':t('hero.badge');
+      $('unitDetail').classList.remove('hidden'); $('unitReset').classList.remove('hidden');
+      $('uLetter').textContent=unit; $('uBed').textContent=t('unit.bed.'+u.bed);
+      $('uArea').textContent=u.m2;
+      $('uRooms').innerHTML=u.rooms.map(r=>'<div class="flex items-baseline justify-between gap-4 border-b border-hair/70 py-2"><dt class="text-mist">'+t(r[0])+'</dt><dd class="font-mono text-paper tnum">'+r[1]+' m²</dd></div>').join('');
+    } else {
+      $('pSource').setAttribute('srcset', z.img+'-1600.webp');
+      $('pImg').setAttribute('src', z.img+'-1600.jpg');
+      $('pImg').setAttribute('alt', t(z.nameKey));
+      $('pImg').setAttribute('height', z.ar);
+      $('pFloorTag').textContent='Индикатив'===t('hero.badge')?'Индикатив':(lang==='zh'?'示意':lang==='en'?'Indicative':'Индикатив');
+      $('unitDetail').classList.add('hidden'); $('unitReset').classList.add('hidden');
+    }
+    document.querySelectorAll('[data-unit]').forEach(c=>c.setAttribute('aria-selected', String(c.getAttribute('data-unit')===unit)));
+  }
+  function selZone(k,focus){
+    zone=k; unit=null;
+    tabs.forEach(tb=>{const on=tb.getAttribute('data-zone')===k; tb.setAttribute('aria-selected',String(on)); tb.setAttribute('tabindex',on?'0':'-1'); if(on&&focus) tb.focus();});
+    renderPanel();
+  }
+  tabs.forEach((tb,idx)=>{
+    tb.addEventListener('click',()=>selZone(tb.getAttribute('data-zone'),false));
+    tb.addEventListener('keydown',e=>{let n=null;
+      if(e.key==='ArrowUp'||e.key==='ArrowLeft') n=(idx-1+tabs.length)%tabs.length;
+      else if(e.key==='ArrowDown'||e.key==='ArrowRight') n=(idx+1)%tabs.length;
+      else if(e.key==='Home') n=0; else if(e.key==='End') n=tabs.length-1;
+      if(n!==null){e.preventDefault(); selZone(tabs[n].getAttribute('data-zone'),true);}});
+  });
+  document.querySelectorAll('[data-unit]').forEach(c=>c.addEventListener('click',()=>{ unit=c.getAttribute('data-unit'); renderPanel(); }));
+  $('unitReset').addEventListener('click',()=>{ unit=null; renderPanel(); });
+
+  // ---- language ----
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>applyLang(b.getAttribute('data-lang'))));
+
+  // ---- multi-step form ----
+  const form=$('packForm'), msg=$('formMsg');
+  function setStepLabel(){ const s2=!$('step2').classList.contains('hidden'); $('stepLabel').textContent = s2 ? t('form.step.label2') : t('form.step.label'); }
+  function goStep(n){
+    $('step1').classList.toggle('hidden', n!==1); $('step2').classList.toggle('hidden', n!==2);
+    $('dot1').className='w-6 h-0.5 '+(n>=1?'bg-brass-500':'bg-hair'); $('dot2').className='w-6 h-0.5 '+(n>=2?'bg-brass-500':'bg-hair');
+    setStepLabel();
+  }
+  const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  $('toStep2').addEventListener('click',()=>{
+    const n=(form.name.value||'').trim(), e=(form.email.value||'').trim();
+    if(!n||!emailOk(e)){ msg.textContent=t('form.required'); msg.className='text-sm mt-5 min-h-[1.25rem] text-brass-300'; (!n?form.name:form.email).focus(); return; }
+    msg.textContent=''; goStep(2);
+  });
+  $('toStep1').addEventListener('click',()=>{ msg.textContent=''; goStep(1); });
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const n=(form.name.value||'').trim(), em=(form.email.value||'').trim();
+    if(!n||!emailOk(em)){ goStep(1); msg.textContent=t('form.required'); msg.className='text-sm mt-5 min-h-[1.25rem] text-brass-300'; return; }
+    const body=encodeURIComponent('Name: '+n+'\nCompany: '+(form.company.value||'')+'\nEmail: '+em+'\nPhone: '+(form.phone.value||'')+'\nInvestor type: '+(form.type.value||'')+'\n\nPlease send the NOMT investor pack.');
+    window.location.href='mailto:lcdelgets@gmail.com?subject='+encodeURIComponent('NOMT — Investor pack request')+'&body='+body;
+    msg.textContent=t('form.success'); msg.className='text-sm mt-5 min-h-[1.25rem] text-stream-serv'; form.reset(); goStep(1);
+  });
+
+  // ---- reveal + parallax + progress + section index ----
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    const io=new IntersectionObserver((es)=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('[data-reveal], .img-cine').forEach(n=>io.observe(n));
+    const st=$('stackTabs'); const so=new IntersectionObserver((es)=>es.forEach(en=>{ if(en.isIntersecting){ st.classList.add('stack-anim'); so.unobserve(en.target); }}),{threshold:.2}); so.observe(st);
+  } else { document.querySelectorAll('[data-reveal], .img-cine').forEach(n=>n.classList.add('is-in')); }
+
+  const idx=[].slice.call(document.querySelectorAll('[data-idx]'));
+  const px=[].slice.call(document.querySelectorAll('[data-parallax]'));
+  let ticking=false;
+  function onScroll(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(()=>{
+      const h=document.documentElement; const p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+      $('progress').style.setProperty('--p', Math.max(0,Math.min(1,p)));
+      if(!reduce) px.forEach(im=>{ const r=im.getBoundingClientRect(); const off=(r.top+r.height/2-window.innerHeight/2)*-(parseFloat(im.dataset.parallax)||.1); im.style.transform='scale(1.12) translate3d(0,'+off.toFixed(1)+'px,0)'; });
+      // active section
+      let cur=''; idx.forEach(a=>{ const el=document.querySelector(a.getAttribute('href')); if(el && el.getBoundingClientRect().top<window.innerHeight*0.5) cur=a.getAttribute('href'); });
+      idx.forEach(a=>a.setAttribute('aria-current', String(a.getAttribute('href')===cur)));
+      ticking=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
+
+  // ---- init ----
+  (function init(){
+    let fp=(location.pathname||'').replace(/\/+$/,'').split('/').pop(), stored=null;
+    try{ stored=localStorage.getItem(STORE); }catch(e){}
+    applyLang(LANGS.indexOf(fp)>-1?fp:(LANGS.indexOf(stored)>-1?stored:'mn'));
+    onScroll();
+  })();
+})();
+</script>
+</body>
+</html>

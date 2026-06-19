@@ -1,0 +1,27 @@
+# --- Sensitive source material — NEVER publish ---
+*.xlsx
+*.xls
+*.pdf
+*.dxf
+/A_3D_render.png
+/B_3D_render.png
+/C_3D_render.png
+/D Apartmenrt.png
+/E_3D_render.png
+/F_3D_render.png
+/G_3D_render.png
+/H_3D_render.png
+/details.png
+
+# --- Build tooling & working files (not part of the site) ---
+node_modules/
+package.json
+package-lock.json
+*.mjs
+temporary screenshots/
+assets/_src/
+.design-md-repo/
+ponytail/
+.claude/
+.DS_Store
+Thumbs.db
