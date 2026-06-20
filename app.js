@@ -10,19 +10,18 @@
 
   /* --------------------------------------------------------------------------
      SITE — client-editable map config.
-     NOTE: coordinates are an INDICATIVE placeholder for Sükhbaatar district,
-     Khoroo 10 (north of the Big Ring Road, ~1.5 km from Chinggis Square).
-     Replace SITE.lat / SITE.lng with the exact parcel pin when confirmed.
+     Exact parcel pin confirmed by the client: 47°55'48.3"N 106°55'32.7"E.
+     Landmark coordinates are real/approximate central-UB references.
      -------------------------------------------------------------------------- */
   var SITE={
-    lat:47.9266, lng:106.9208, zoom:15,
+    lat:47.93008, lng:106.92575, zoom:14,
     landmarks:[
-      {key:'lm.square', lat:47.9187, lng:106.9176},
-      {key:'lm.uni',    lat:47.9239, lng:106.9209},
-      {key:'lm.gov',    lat:47.9203, lng:106.9175},
-      {key:'lm.store',  lat:47.9166, lng:106.9104},
-      {key:'lm.mall',   lat:47.9136, lng:106.9216},
-      {key:'lm.hosp',   lat:47.9286, lng:106.9069}
+      {key:'lm.square', lat:47.9187,  lng:106.9176},
+      {key:'lm.uni',    lat:47.9209,  lng:106.9189},
+      {key:'lm.gov',    lat:47.9193,  lng:106.9175},
+      {key:'lm.store',  lat:47.91703, lng:106.90625},
+      {key:'lm.mall',   lat:47.9133,  lng:106.9215},
+      {key:'lm.hosp',   lat:47.91639, lng:106.92447}
     ]
   };
 
