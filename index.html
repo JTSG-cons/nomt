@@ -21,12 +21,12 @@
     theme: {
       extend: {
         colors: {
-          ink:    { DEFAULT:'#07150F', raise:'#0A1E14', card:'#0E2619' },
-          brass:  { 300:'#EBD18E', 400:'#DCB86C', 500:'#CBA253', 600:'#9E7C34' },
-          mist:   { DEFAULT:'#A6B8AC', dim:'#6E8377' },
-          paper:  { DEFAULT:'#ECEFEA', ink:'#16241B' },
-          stream: { res:'#EBD18E', serv:'#7FB3AC', off:'#8FB0A6', com:'#D6B387', park:'#82978B' },
-          hair:   '#1E3A2B',
+          ink:    { DEFAULT:'#F5F1E8', raise:'#EEE8DB', card:'#FCF9F3' },
+          brass:  { 300:'#A87E22', 400:'#936B1A', 500:'#C19A3C', 600:'#6E521A' },
+          mist:   { DEFAULT:'#6E6657', dim:'#9A917F' },
+          paper:  { DEFAULT:'#20201C', ink:'#20201C' },
+          stream: { res:'#B58A2E', serv:'#2E7E6E', off:'#3F6E8C', com:'#9A6E2E', park:'#5F7065' },
+          hair:   '#E5DFD1',
         },
         fontFamily: {
           display: ['"Playfair Display"','"Noto Serif"','"Noto Serif SC"','serif'],
@@ -59,14 +59,14 @@
 
   /* austere luxury: sharp by default, pills only on buttons */
   .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:rgba(230,201,136,.72); }
-  .rule{ height:1px; background:linear-gradient(90deg, transparent, rgba(203,162,83,.28), transparent); border:0; }
-  .rule-l{ height:1px; background:rgba(30,58,43,.9); border:0; }
+  .rule{ height:1px; background:linear-gradient(90deg, transparent, rgba(154,110,26,.28), transparent); border:0; }
+  .rule-l{ height:1px; background:rgba(196,189,172,.9); border:0; }
 
   /* film grain — quiet depth */
   .grain{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:.045; mix-blend-mode:soft-light; }
 
   *:focus{ outline:none; }
-  *:focus-visible{ outline:1.5px solid #DCB86C; outline-offset:3px; }
+  *:focus-visible{ outline:1.5px solid #936B1A; outline-offset:3px; }
 
   /* scroll progress hairline */
   #progress{ transform:scaleX(var(--p,0)); transform-origin:0 50%; }
@@ -89,7 +89,7 @@
 
   /* chips */
   .chip{ transition:background-color .25s var(--cine), color .25s var(--cine), border-color .25s var(--cine); }
-  .chip[aria-selected="true"]{ background:#CBA253; color:#07150F; border-color:#CBA253; }
+  .chip[aria-selected="true"]{ background:#A87E22; color:#07150F; border-color:#A87E22; }
 
   .btn{ transition:transform .25s var(--cine), background-color .25s, border-color .25s, color .25s; }
   .btn:hover{ transform:translateY(-2px); }
@@ -97,13 +97,13 @@
 
   /* section index rail */
   .idx-link span{ transition:width .3s var(--cine), background-color .3s, color .3s; }
-  .idx-link[aria-current="true"] .idx-bar{ width:28px; background:#CBA253; }
-  .idx-link[aria-current="true"] .idx-num{ color:#ECEFEA; }
+  .idx-link[aria-current="true"] .idx-bar{ width:28px; background:#A87E22; }
+  .idx-link[aria-current="true"] .idx-num{ color:#20201C; }
 
-  ::selection{ background:rgba(203,162,83,.30); color:#fff; }
+  ::selection{ background:rgba(154,110,26,.30); color:#fff; }
   *::-webkit-scrollbar{ width:9px; height:9px; }
-  *::-webkit-scrollbar-thumb{ background:#10261A; }
-  *::-webkit-scrollbar-track{ background:#07150F; }
+  *::-webkit-scrollbar-thumb{ background:#D8D0BF; }
+  *::-webkit-scrollbar-track{ background:#EFE9DC; }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
@@ -119,7 +119,7 @@
 <body class="bg-ink text-paper font-body antialiased">
 <div class="grain fixed inset-0 z-[60] pointer-events-none"></div>
 <div class="fixed top-0 left-0 right-0 h-px z-[55] bg-brass-500/60" id="progress"></div>
-<a href="#building" data-i18n="a11y.skip" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-brass-500 focus:text-ink focus:px-4 focus:py-2">Агуулга руу шилжих</a>
+<a href="#building" data-i18n="a11y.skip" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-brass-500 focus:text-paper focus:px-4 focus:py-2">Агуулга руу шилжих</a>
 
 <!-- SECTION INDEX RAIL (desktop) -->
 <nav aria-label="Section index" class="hidden xl:flex flex-col gap-4 fixed right-7 top-1/2 -translate-y-1/2 z-40">
@@ -132,11 +132,11 @@
 </nav>
 
 <!-- NAV -->
-<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/55">
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/85">
   <div class="absolute bottom-0 inset-x-0 rule-l opacity-60"></div>
   <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
     <a href="#top" class="flex items-center gap-3 min-w-0">
-      <span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-ink font-display text-sm">N</span>
+      <span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-paper font-display text-sm">N</span>
       <span class="font-display text-lg tracking-[0.12em]">NOMT</span>
     </a>
     <div class="flex items-center gap-3 sm:gap-5 shrink-0">
@@ -155,36 +155,38 @@
 <main id="top">
 
 <!-- HERO -->
-<section class="relative min-h-[92vh] flex items-end overflow-hidden">
-  <div class="img-cine is-in absolute inset-0 -z-10">
-    <picture>
-      <source type="image/webp" srcset="assets/hero-1200.webp 1200w, assets/hero-1920.webp 1920w" sizes="100vw" />
-      <img src="assets/hero-1920.jpg" srcset="assets/hero-1200.jpg 1200w, assets/hero-1920.jpg 1920w" sizes="100vw"
-           width="1920" height="1097" loading="eager" fetchpriority="high" decoding="async" data-parallax="0.12"
-           data-i18n-attr="alt" data-i18n="hero.img.alt" alt="NOMT барилгын үдшийн дүрс" class="w-full h-full object-cover scale-110" />
-    </picture>
-  </div>
-  <div class="absolute inset-0 -z-10 pointer-events-none" style="background:linear-gradient(180deg, rgba(7,21,15,.55) 0%, rgba(7,21,15,.15) 32%, rgba(7,21,15,.55) 64%, #07150F 100%);"></div>
-  <div class="absolute inset-0 -z-10 pointer-events-none mix-blend-multiply" style="background:radial-gradient(70% 60% at 80% 10%, rgba(203,162,83,.14), transparent 70%);"></div>
-
-  <div class="relative w-full max-w-7xl mx-auto px-5 sm:px-8 pb-12 md:pb-16 pt-28">
-    <p data-i18n="hero.eyebrow" class="eyebrow mb-6 is-in" data-reveal>А ЗЭРЭГЛЭЛ · УЛААНБААТАР · ТӨВӨӨС 1.5 КМ</p>
-    <h1 data-i18n="hero.headline" data-reveal style="--i:1" class="font-display font-normal text-display-xl text-balance max-w-4xl mb-7">Таван зориулалт. Нэг босоо хөрөнгө.</h1>
-    <div class="flex flex-wrap items-center gap-3 mb-12" data-reveal style="--i:2">
-      <a href="#partner" data-i18n="hero.cta1" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Хөрөнгө оруулагчийн багц авах</a>
-      <a href="#building" data-i18n="hero.cta2" class="btn inline-flex items-center rounded-full border border-brass-500/40 hover:border-brass-300 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Барилгыг харах</a>
+<section class="relative pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+  <div class="absolute inset-0 -z-10" style="background:radial-gradient(55% 50% at 90% 6%, rgba(193,154,60,.12), transparent 60%), #F5F1E8;"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-10 lg:gap-14 items-center">
+    <div class="min-w-0">
+      <p data-i18n="hero.eyebrow" class="eyebrow mb-6 is-in" data-reveal>А ЗЭРЭГЛЭЛ · УЛААНБААТАР · ТӨВӨӨС 1.5 КМ</p>
+      <h1 data-i18n="hero.headline" data-reveal style="--i:1" class="font-display font-normal text-display-xl text-balance text-paper mb-7">Таван зориулалт. Нэг босоо хөрөнгө.</h1>
+      <div class="flex flex-wrap items-center gap-3 mb-10" data-reveal style="--i:2">
+        <a href="#partner" data-i18n="hero.cta1" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Хөрөнгө оруулагчийн багц авах</a>
+        <a href="#building" data-i18n="hero.cta2" class="btn inline-flex items-center rounded-full border border-brass-500/50 hover:border-brass-500 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Барилгыг харах</a>
+      </div>
+      <div class="rule-l mb-6"></div>
+      <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6" data-reveal style="--i:3">
+        <div><dt data-i18n="hero.stat1.v" class="tnum font-mono text-spec text-paper">15</dt><dd data-i18n="hero.stat1.l" class="eyebrow mt-2 text-mist-dim">Давхар + B1</dd></div>
+        <div><dt data-i18n="hero.stat2.v" class="tnum font-mono text-spec text-paper">64</dt><dd data-i18n="hero.stat2.l" class="eyebrow mt-2 text-mist-dim">Орон сууц</dd></div>
+        <div><dt data-i18n="hero.stat3.v" class="tnum font-mono text-spec text-brass-500">5</dt><dd data-i18n="hero.stat3.l" class="eyebrow mt-2 text-mist-dim">Зориулалт</dd></div>
+        <div><dt class="tnum font-mono text-spec text-paper">13,207<span class="text-base align-top ml-1">m²</span></dt><dd data-i18n="hero.stat4.l" class="eyebrow mt-2 text-mist-dim">Нийт талбай</dd></div>
+      </dl>
     </div>
-    <div class="rule-l mb-6 max-w-5xl"></div>
-    <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6 max-w-5xl" data-reveal style="--i:3">
-      <div><dt data-i18n="hero.stat1.v" class="tnum font-mono text-spec text-paper">15</dt><dd data-i18n="hero.stat1.l" class="eyebrow mt-2 text-mist-dim">Давхар + B1</dd></div>
-      <div><dt data-i18n="hero.stat2.v" class="tnum font-mono text-spec text-paper">64</dt><dd data-i18n="hero.stat2.l" class="eyebrow mt-2 text-mist-dim">Орон сууц</dd></div>
-      <div><dt data-i18n="hero.stat3.v" class="tnum font-mono text-spec text-brass-300">5</dt><dd data-i18n="hero.stat3.l" class="eyebrow mt-2 text-mist-dim">Зориулалт</dd></div>
-      <div><dt class="tnum font-mono text-spec text-paper">13,207<span class="text-base align-top ml-1">m²</span></dt><dd data-i18n="hero.stat4.l" class="eyebrow mt-2 text-mist-dim">Нийт талбай</dd></div>
-    </dl>
-  </div>
-  <div class="absolute z-20 right-5 bottom-5 flex items-center gap-2">
-    <span class="w-1 h-1 rounded-full bg-brass-300"></span>
-    <span data-i18n="hero.badge" class="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/70">Уран сайхны төсөөлөл</span>
+    <div class="min-w-0" data-reveal style="--i:1">
+      <figure class="img-cine is-in relative ring-1 ring-hair shadow-[0_30px_70px_-30px_rgba(40,33,18,.45)]">
+        <picture>
+          <source type="image/webp" srcset="assets/hero-1200.webp 1200w, assets/hero-1920.webp 1920w" sizes="(min-width:1024px) 48vw, 100vw" />
+          <img src="assets/hero-1920.jpg" srcset="assets/hero-1200.jpg 1200w, assets/hero-1920.jpg 1920w" sizes="(min-width:1024px) 48vw, 100vw"
+               width="1920" height="1097" loading="eager" fetchpriority="high" decoding="async" data-parallax="0.08"
+               data-i18n-attr="alt" data-i18n="hero.img.alt" alt="NOMT барилгын үдшийн дүрс" class="w-full h-[300px] sm:h-[420px] lg:h-[560px] object-cover" />
+        </picture>
+        <figcaption class="absolute z-20 left-4 bottom-4 flex items-center gap-2">
+          <span class="w-1 h-1 rounded-full bg-brass-300"></span>
+          <span data-i18n="hero.badge" class="font-mono text-[10px] uppercase tracking-[0.18em] text-white/85 bg-black/35 backdrop-blur px-2.5 py-1">Уран сайхны төсөөлөл</span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -193,7 +195,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <figure data-reveal class="img-cine relative ring-1 ring-hair order-last lg:order-first">
-        <div class="absolute inset-0 z-10 pointer-events-none mix-blend-multiply" style="background:linear-gradient(150deg, rgba(203,162,83,.14), rgba(7,21,15,.4));"></div>
+        <div class="absolute inset-0 z-10 pointer-events-none mix-blend-multiply" style="background:linear-gradient(150deg, rgba(154,110,26,.14), rgba(7,21,15,.4));"></div>
         <picture>
           <source type="image/webp" srcset="assets/lobby-800.webp 800w, assets/lobby-1280.webp 1280w" sizes="(min-width:1024px) 46vw, 100vw" />
           <img src="assets/lobby-1280.jpg" srcset="assets/lobby-800.jpg 800w, assets/lobby-1280.jpg 1280w" sizes="(min-width:1024px) 46vw, 100vw"
@@ -224,7 +226,7 @@
 </section>
 
 <!-- THE BUILDING — floor-by-floor signature (income streams + real renders) -->
-<section id="building" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:linear-gradient(180deg,#07150F,#0A1E14 50%,#07150F)">
+<section id="building" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:#EEE8DB">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
       <p data-i18n="sec.building.eyebrow" class="eyebrow mb-5">02 — БАРИЛГА</p>
@@ -235,25 +237,25 @@
     <div class="grid lg:grid-cols-[minmax(0,330px)_1fr] gap-6 lg:gap-12">
       <!-- streams -->
       <div id="stackTabs" role="tablist" aria-orientation="vertical" aria-label="Income streams" class="flex flex-col gap-1.5 min-h-[440px]">
-        <button role="tab" id="tab-res" data-zone="res" aria-selected="true" aria-controls="bPanel" tabindex="0" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:8;--tint:#EBD18E;--i:4">
+        <button role="tab" id="tab-res" data-zone="res" aria-selected="true" aria-controls="bPanel" tabindex="0" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:8;--tint:#B58A2E;--i:4">
           <span class="min-w-0"><span data-i18n="stream.residences" class="block font-display text-lg leading-tight">Худалдах орон сууц</span><span class="block eyebrow mt-1.5 text-mist-dim">8–15</span></span>
-          <span class="w-2 h-2 mt-1 shrink-0" style="background:#EBD18E"></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#B58A2E"></span>
         </button>
-        <button role="tab" id="tab-serv" data-zone="serv" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#7FB3AC;--i:3">
+        <button role="tab" id="tab-serv" data-zone="serv" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#2E7E6E;--i:3">
           <span class="min-w-0"><span data-i18n="stream.serviced" class="block font-display text-lg leading-tight">Үйлчилгээт орон сууц</span><span class="block eyebrow mt-1.5 text-mist-dim">5–7</span></span>
-          <span class="w-2 h-2 mt-1 shrink-0" style="background:#7FB3AC"></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#2E7E6E"></span>
         </button>
-        <button role="tab" id="tab-off" data-zone="off" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#8FB0A6;--i:2">
+        <button role="tab" id="tab-off" data-zone="off" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:3;--tint:#3F6E8C;--i:2">
           <span class="min-w-0"><span data-i18n="stream.office" class="block font-display text-lg leading-tight">Оффис</span><span class="block eyebrow mt-1.5 text-mist-dim">5–7</span></span>
-          <span class="w-2 h-2 mt-1 shrink-0" style="background:#8FB0A6"></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#3F6E8C"></span>
         </button>
-        <button role="tab" id="tab-com" data-zone="com" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:4;--tint:#D6B387;--i:1">
+        <button role="tab" id="tab-com" data-zone="com" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:4;--tint:#9A6E2E;--i:1">
           <span class="min-w-0"><span data-i18n="stream.commercial" class="block font-display text-lg leading-tight">Худалдаа үйлчилгээ</span><span class="block eyebrow mt-1.5 text-mist-dim">1–4</span></span>
-          <span class="w-2 h-2 mt-1 shrink-0" style="background:#D6B387"></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#9A6E2E"></span>
         </button>
-        <button role="tab" id="tab-park" data-zone="park" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:1;--tint:#82978B;--i:0">
+        <button role="tab" id="tab-park" data-zone="park" aria-selected="false" aria-controls="bPanel" tabindex="-1" class="band text-left bg-ink-card px-5 py-4 flex items-start justify-between gap-3" style="flex-grow:1;--tint:#5F7065;--i:0">
           <span class="min-w-0"><span data-i18n="stream.parking" class="block font-display text-lg leading-tight">Автомат зогсоол</span><span class="block eyebrow mt-1.5 text-mist-dim">B1</span></span>
-          <span class="w-2 h-2 mt-1 shrink-0" style="background:#82978B"></span>
+          <span class="w-2 h-2 mt-1 shrink-0" style="background:#5F7065"></span>
         </button>
       </div>
 
@@ -269,7 +271,7 @@
 
         <div class="flex items-start justify-between gap-4 flex-wrap mb-3">
           <div>
-            <div class="flex items-center gap-3 mb-1"><span id="pDot" class="w-2.5 h-2.5" style="background:#EBD18E"></span><span id="pTag" class="eyebrow text-brass-300">Хөрөнгийн өгөөж</span></div>
+            <div class="flex items-center gap-3 mb-1"><span id="pDot" class="w-2.5 h-2.5" style="background:#B58A2E"></span><span id="pTag" class="eyebrow text-brass-300">Хөрөнгийн өгөөж</span></div>
             <h3 id="pName" class="font-display text-display-md">Худалдах орон сууц</h3>
           </div>
           <div id="pFloorsBox" class="text-right"><div data-i18n="label.floors" class="eyebrow text-mist-dim mb-1">Давхар</div><div id="pFloors" class="font-mono text-paper tnum">8–15</div></div>
@@ -341,7 +343,7 @@
 </section>
 
 <!-- NUMBERS / SPECIFICATIONS -->
-<section id="numbers" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:#0A1E14">
+<section id="numbers" class="py-24 md:py-36 border-y border-hair scroll-mt-16" style="background:#EEE8DB">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div data-reveal class="mb-12 md:mb-16 max-w-2xl">
       <p data-i18n="sec.numbers.eyebrow" class="eyebrow mb-5">04 — ҮЗҮҮЛЭЛТ</p>
@@ -388,17 +390,17 @@
       <div data-reveal class="ring-1 ring-hair p-6 sm:p-10">
         <svg viewBox="0 0 400 300" class="w-full h-auto" role="img" aria-labelledby="locTitle">
           <title id="locTitle" data-i18n="loc.map.caption">Загварчилсан байршлын схем</title>
-          <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#CBA253" stop-opacity=".22"/><stop offset="100%" stop-color="#CBA253" stop-opacity="0"/></radialGradient></defs>
+          <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#A87E22" stop-opacity=".22"/><stop offset="100%" stop-color="#A87E22" stop-opacity="0"/></radialGradient></defs>
           <circle cx="200" cy="180" r="150" fill="url(#g)"/>
-          <ellipse cx="200" cy="185" rx="135" ry="92" fill="none" stroke="#6E8377" stroke-width="1.2" stroke-dasharray="5 6" opacity=".7"/>
-          <text x="316" y="150" font-family="IBM Plex Mono, monospace" font-size="9" fill="#6E8377" data-i18n="loc.diagram.ring">Их Тойруу</text>
-          <circle cx="200" cy="200" r="4" fill="#A6B8AC"/>
-          <text x="200" y="224" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#A6B8AC" data-i18n="loc.diagram.centre">Хотын төв</text>
-          <line x1="200" y1="200" x2="200" y2="92" stroke="#CBA253" stroke-width="1.2" stroke-dasharray="3 4"/>
-          <text x="210" y="150" font-family="IBM Plex Mono, monospace" font-size="10" fill="#EBD18E" class="tnum" data-i18n="loc.diagram.dist">1.5 км</text>
-          <g transform="translate(200,82)"><rect x="-8" y="-8" width="16" height="16" fill="#07150F" stroke="#CBA253" stroke-width="2"/><rect x="-3" y="-3" width="6" height="6" fill="#EBD18E"/></g>
-          <text x="200" y="56" text-anchor="middle" font-family="Noto Serif, serif" font-size="13" fill="#ECEFEA" data-i18n="loc.diagram.nomt">NOMT</text>
-          <text x="36" y="40" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6E8377">N ↑</text>
+          <ellipse cx="200" cy="185" rx="135" ry="92" fill="none" stroke="#7C7565" stroke-width="1.2" stroke-dasharray="5 6" opacity=".7"/>
+          <text x="316" y="150" font-family="IBM Plex Mono, monospace" font-size="9" fill="#7C7565" data-i18n="loc.diagram.ring">Их Тойруу</text>
+          <circle cx="200" cy="200" r="4" fill="#6E6657"/>
+          <text x="200" y="224" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#6E6657" data-i18n="loc.diagram.centre">Хотын төв</text>
+          <line x1="200" y1="200" x2="200" y2="92" stroke="#A87E22" stroke-width="1.2" stroke-dasharray="3 4"/>
+          <text x="210" y="150" font-family="IBM Plex Mono, monospace" font-size="10" fill="#B58A2E" class="tnum" data-i18n="loc.diagram.dist">1.5 км</text>
+          <g transform="translate(200,82)"><rect x="-8" y="-8" width="16" height="16" fill="#07150F" stroke="#A87E22" stroke-width="2"/><rect x="-3" y="-3" width="6" height="6" fill="#B58A2E"/></g>
+          <text x="200" y="56" text-anchor="middle" font-family="Noto Serif, serif" font-size="13" fill="#20201C" data-i18n="loc.diagram.nomt">NOMT</text>
+          <text x="36" y="40" font-family="IBM Plex Mono, monospace" font-size="11" fill="#7C7565">N ↑</text>
         </svg>
         <p data-i18n="loc.map.caption" class="text-mist-dim text-xs mt-4 text-center">Загварчилсан байршлын схем — масштаб бус.</p>
       </div>
@@ -427,10 +429,7 @@
 
 <!-- PARTNER -->
 <section id="partner" class="relative py-24 md:py-36 overflow-hidden border-t border-hair scroll-mt-16">
-  <div class="absolute inset-0 -z-10">
-    <picture><source type="image/webp" srcset="assets/suite-1280.webp" /><img src="assets/suite-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-25" /></picture>
-    <div class="absolute inset-0" style="background:linear-gradient(180deg,#07150F 0%,rgba(7,21,15,.86) 45%,#07150F 100%)"></div>
-  </div>
+  <div class="absolute inset-0 -z-10" style="background:radial-gradient(50% 60% at 84% 12%, rgba(46,126,110,.07), transparent 60%), #EEE8DB;"></div>
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div data-reveal>
@@ -449,7 +448,7 @@
         <div id="step1" class="space-y-5">
           <label class="block"><span data-i18n="form.name" class="block eyebrow text-mist mb-2">Нэр</span><input name="name" type="text" required autocomplete="name" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
           <label class="block"><span data-i18n="form.email" class="block eyebrow text-mist mb-2">И-мэйл</span><input name="email" type="email" required autocomplete="email" class="w-full bg-transparent border-b border-hair focus:border-brass-400 py-2.5 text-paper text-sm" /></label>
-          <button type="button" id="toStep2" data-i18n="form.next" class="btn w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3 mt-1">Үргэлжлүүлэх</button>
+          <button type="button" id="toStep2" data-i18n="form.next" class="btn w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brass-500 hover:bg-brass-400 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3 mt-1">Үргэлжлүүлэх</button>
         </div>
         <!-- step 2 -->
         <div id="step2" class="space-y-5 hidden">
@@ -466,7 +465,7 @@
             </select>
           </label>
           <div class="flex flex-wrap items-center gap-3 pt-1">
-            <button type="submit" data-i18n="form.submit" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-ink font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Багц авах</button>
+            <button type="submit" data-i18n="form.submit" class="btn inline-flex items-center rounded-full bg-brass-500 hover:bg-brass-400 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Багц авах</button>
             <button type="button" id="toStep1" data-i18n="form.back" class="btn inline-flex items-center rounded-full border border-brass-500/40 hover:border-brass-300 text-paper font-mono text-[12px] tracking-[0.16em] uppercase px-6 py-3">Буцах</button>
           </div>
         </div>
@@ -483,7 +482,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
     <div class="grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
       <div>
-        <div class="flex items-center gap-3 mb-4"><span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-ink font-display text-sm">N</span><span class="font-display text-xl tracking-[0.12em]">NOMT</span></div>
+        <div class="flex items-center gap-3 mb-4"><span class="inline-grid place-items-center w-7 h-7 bg-gradient-to-br from-brass-300 to-brass-600 text-paper font-display text-sm">N</span><span class="font-display text-xl tracking-[0.12em]">NOMT</span></div>
         <p data-i18n="footer.descriptor" class="text-mist text-sm max-w-xs">ЖЭЙ ТИ ЭС ХХК — Үйлчилгээт орон сууцны цогцолбор</p>
       </div>
       <div>
@@ -638,15 +637,15 @@
   };
 
   const ZONES=[
-    {key:'res',floors:'8–15',color:'#EBD18E',img:'assets/floor-res',ar:'893',nameKey:'stream.residences',tagKey:'zone.res.tag',logicKey:'zone.res.logic',units:true,
+    {key:'res',floors:'8–15',color:'#B58A2E',img:'assets/floor-res',ar:'893',nameKey:'stream.residences',tagKey:'zone.res.tag',logicKey:'zone.res.logic',units:true,
       facts:[{l:'label.floors',t:'8–15'},{l:'label.units',t:'64'},{l:'floor.area.l',t:'564 m²'}]},
-    {key:'serv',floors:'5–7',color:'#7FB3AC',img:'assets/floor-serv',ar:'1340',nameKey:'stream.serviced',tagKey:'zone.serv.tag',logicKey:'zone.serv.logic',
+    {key:'serv',floors:'5–7',color:'#2E7E6E',img:'assets/floor-serv',ar:'1340',nameKey:'stream.serviced',tagKey:'zone.serv.tag',logicKey:'zone.serv.logic',
       facts:[{l:'label.floors',t:'5–7'},{l:'floor.area.l',t:'~148 m²'},{l:'label.billing',v:'val.nightly'}]},
-    {key:'off',floors:'5–7',color:'#8FB0A6',img:'assets/floor-off',ar:'893',nameKey:'stream.office',tagKey:'zone.off.tag',logicKey:'zone.off.logic',
+    {key:'off',floors:'5–7',color:'#3F6E8C',img:'assets/floor-off',ar:'893',nameKey:'stream.office',tagKey:'zone.off.tag',logicKey:'zone.off.logic',
       facts:[{l:'label.floors',t:'5–7'},{l:'label.income',v:'val.lease'},{l:'label.term',v:'field.onrequest'}]},
-    {key:'com',floors:'1–4',color:'#D6B387',img:'assets/floor-com',ar:'900',nameKey:'stream.commercial',tagKey:'zone.com.tag',logicKey:'zone.com.logic',
+    {key:'com',floors:'1–4',color:'#9A6E2E',img:'assets/floor-com',ar:'900',nameKey:'stream.commercial',tagKey:'zone.com.tag',logicKey:'zone.com.logic',
       facts:[{l:'label.floors',t:'1–4'},{l:'label.anchors',v:'val.anchorlist'},{l:'label.leases',v:'val.longterm'}]},
-    {key:'park',floors:'B1',color:'#82978B',img:'assets/floor-park',ar:'900',nameKey:'stream.parking',tagKey:'zone.park.tag',logicKey:'zone.park.logic',
+    {key:'park',floors:'B1',color:'#5F7065',img:'assets/floor-park',ar:'900',nameKey:'stream.parking',tagKey:'zone.park.tag',logicKey:'zone.park.logic',
       facts:[{l:'label.level',t:'B1'},{l:'label.spaces',t:'20'},{l:'label.type',v:'val.automated'}]}
   ];
   const UNITS={
